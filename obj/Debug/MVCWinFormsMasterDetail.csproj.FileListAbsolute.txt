@@ -1,0 +1,11 @@
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.csproj.AssemblyReference.cache
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.FrmMain.resources
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.Properties.Resources.resources
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.csproj.GenerateResource.cache
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.csproj.CoreCompileInputs.cache
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\bin\Debug\MVCWinFormsMasterDetail.exe.config
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\bin\Debug\MVCWinFormsMasterDetail.exe
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\bin\Debug\MVCWinFormsMasterDetail.pdb
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.exe
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.pdb
+J:\moje\MVC_Winforms_MasterDetail\MVCWinFormsMAsterDetail\obj\Debug\MVCWinFormsMasterDetail.FrmGrupyPracownicze.resources
