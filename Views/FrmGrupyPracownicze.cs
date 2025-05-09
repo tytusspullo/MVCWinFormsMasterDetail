@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCWinFormsMasterDetail;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +14,23 @@ namespace MVCWinFormsMasterDetail
     public partial class FrmGrupyPracownicze : Form, IGrupyPracowniczeViewMethodsToManipulateView
     {
         GrupyPracowniczeController _controller = null;
-        
+        public GrupaPracowniczaState _state = new PrzegladanieGrupaPracowniczaState();
+
         public FrmGrupyPracownicze()
         {
             InitializeComponent();
-        }
+        } 
+
 
         #region IGrupyPracowniczeView_MethodsNeededToManipulateView
         public void SetController(GrupyPracowniczeController controller)
         {
             _controller = controller;
+        }
+        public GrupaPracowniczaState State
+        {
+            get { return _state; }
+            set { _state = value; }
         }
         public int GrupaPracowniczaID 
         {
@@ -103,12 +111,20 @@ namespace MVCWinFormsMasterDetail
         public void ShowEditGroupBoxGrupaPracownicza()
         {
             gbEdit.Visible = true;
+            gbEdit.Dock = DockStyle.Fill;
+            lvGrupyPracownicze.Visible = false;
         }
         public void HideEditGroupBoxGrupaPracownicza()
         {
             gbEdit.Visible = false;
+            gbEdit.Dock = DockStyle.Top;
+            lvGrupyPracownicze.Visible = true;
         }
-        #endregion
+        public void UpdateState()
+        {
+            this.Text = _state.ToString();
+        }
+        #endregion 
 
         #region EventsDelagatedToController
         private void btnAddGrupaPracownicza_Click(object sender, EventArgs e)
@@ -140,6 +156,18 @@ namespace MVCWinFormsMasterDetail
         {
             if (this.lvPracownicy.SelectedItems.Count > 0)
                 _controller.SelectedPracownikChanged(this.lvPracownicy.SelectedItems[0].Text);
+        }
+        private void btnAddGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnEditGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnRemoveGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion

@@ -26,6 +26,7 @@ namespace MVCWinFormsMasterDetail
             foreach (GrupaPracownicza grupaPracownicza in _grupyPracownicze)
                 _view.AddToGrid(grupaPracownicza);
             _view.SetSelectedInGrid((GrupaPracownicza)_grupyPracownicze[0]);
+            _view.UpdateState();
         }
         private void updateViewDetailValues(GrupaPracownicza grupaPracownicza)
         {
@@ -45,10 +46,14 @@ namespace MVCWinFormsMasterDetail
             _seletedGrupaPracownicza = grupaPracownicza;
             this.updateViewDetailValues(_seletedGrupaPracownicza);
             _view.ShowEditGroupBoxGrupaPracownicza();
+            _view.State.AddGrupaPracowniczaClick(_view);
+            _view.UpdateState();
         }
         public void EditGrupaPracownicza()
         {
             _view.ShowEditGroupBoxGrupaPracownicza();
+            _view.State.EditGrupaPracowniczaClick(_view);
+            _view.UpdateState();
         } 
         public void RemoveGrupaPracownicza()
         {
@@ -106,10 +111,12 @@ namespace MVCWinFormsMasterDetail
             }
             _view.SetSelectedInGrid(_seletedGrupaPracownicza);
             _view.HideEditGroupBoxGrupaPracownicza();
+            _view.UpdateState();
         }
         public void CancelGrupaPracownicza()
         {
             _view.HideEditGroupBoxGrupaPracownicza();
+            _view.UpdateState();
         }
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
