@@ -8,6 +8,10 @@ namespace MVCWinFormsMasterDetail
 {
     public class EdycjaPozycjiGrupaPracowniczaState:GrupaPracowniczaState
     {
+        public EdycjaPozycjiGrupaPracowniczaState(IGrupyPracowniczeViewMethodsToManipulateView frm) : base(frm)
+        {
+        }
+
 
         public override string ToString()
         {

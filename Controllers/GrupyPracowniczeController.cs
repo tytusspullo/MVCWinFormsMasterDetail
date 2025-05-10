@@ -46,13 +46,13 @@ namespace MVCWinFormsMasterDetail
             _seletedGrupaPracownicza = grupaPracownicza;
             this.updateViewDetailValues(_seletedGrupaPracownicza);
             _view.ShowEditGroupBoxGrupaPracownicza();
-            _view.State.AddGrupaPracowniczaClick(_view);
+            _view.State.AddGrupaPracowniczaClick();
             _view.UpdateState();
         }
         public void EditGrupaPracownicza()
         {
             _view.ShowEditGroupBoxGrupaPracownicza();
-            _view.State.EditGrupaPracowniczaClick(_view);
+            _view.State.EditGrupaPracowniczaClick();
             _view.UpdateState();
         } 
         public void RemoveGrupaPracownicza()
@@ -121,6 +121,18 @@ namespace MVCWinFormsMasterDetail
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
 
+        }
+        public void AddPozycjaGrupaPracownicza()
+        { 
+            
+        }
+        public void EditPozycjaGrupaPracownicza()
+        {
+
+        }
+        public void RemovePozycjaGrupaPracownicza()
+        { 
+        
         }
         #endregion
 

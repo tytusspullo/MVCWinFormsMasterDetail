@@ -164,7 +164,7 @@
             this.lvPracownicy.TabIndex = 4;
             this.lvPracownicy.UseCompatibleStateImageBehavior = false;
             this.lvPracownicy.View = System.Windows.Forms.View.Details;
-            this.lvPracownicy.SelectedIndexChanged += new System.EventHandler(this.lvPracownicy_SelectedIndexChanged);
+            
             // 
             // panel1
             // 

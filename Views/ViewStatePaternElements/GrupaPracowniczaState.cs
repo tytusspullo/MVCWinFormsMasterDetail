@@ -8,23 +8,28 @@ namespace MVCWinFormsMasterDetail
 {
     public abstract class GrupaPracowniczaState
     {
-        public virtual void AddGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        protected IGrupyPracowniczeViewMethodsToManipulateView _frm = null;
+        public GrupaPracowniczaState(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        { 
+            _frm = frm;
+        }
+
+        public virtual void AddGrupaPracowniczaClick()
         { 
             
         }
-        public virtual void EditGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        public virtual void EditGrupaPracowniczaClick()
         {
 
         }
-        public virtual void SaveGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        public virtual void SaveGrupaPracowniczaClick()
         { 
         
         }
-        public virtual void CancelGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        public virtual void CancelGrupaPracowniczaClick()
         { 
         
         }
-
         public override string ToString()
         {
             return "GrupaPracowniczaState";

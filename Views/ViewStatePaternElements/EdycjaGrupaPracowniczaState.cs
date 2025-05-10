@@ -9,21 +9,25 @@ namespace MVCWinFormsMasterDetail
 {
     public class EdycjaGrupaPracowniczaState:GrupaPracowniczaState
     {
-        public override void AddGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
-        {
-            frm.State = new EdycjaGrupaPracowniczaState();
+
+        public EdycjaGrupaPracowniczaState(IGrupyPracowniczeViewMethodsToManipulateView frm) : base(frm)
+        { 
+        
         }
-        public override void EditGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+
+        public override void AddGrupaPracowniczaClick()
         {
-            frm.State = new EdycjaGrupaPracowniczaState();
         }
-        public override void SaveGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        public override void EditGrupaPracowniczaClick()
         {
-            frm.State = new PrzegladanieGrupaPracowniczaState();
         }
-        public override void CancelGrupaPracowniczaClick(IGrupyPracowniczeViewMethodsToManipulateView frm)
+        public override void SaveGrupaPracowniczaClick()
         {
-            frm.State = new PrzegladanieGrupaPracowniczaState();
+            _frm.State = new PrzegladanieGrupaPracowniczaState(_frm);
+        }
+        public override void CancelGrupaPracowniczaClick()
+        {
+            _frm.State = new PrzegladanieGrupaPracowniczaState(_frm);
         }
 
         public override string ToString()

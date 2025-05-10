@@ -8,16 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MVCWinFormsMasterDetail
 {
     public partial class FrmGrupyPracownicze : Form, IGrupyPracowniczeViewMethodsToManipulateView
     {
         GrupyPracowniczeController _controller = null;
-        public GrupaPracowniczaState _state = new PrzegladanieGrupaPracowniczaState();
+        public GrupaPracowniczaState _state = null;
 
         public FrmGrupyPracownicze()
         {
+            _state = new PrzegladanieGrupaPracowniczaState(this);
             InitializeComponent();
         } 
 
@@ -27,11 +29,17 @@ namespace MVCWinFormsMasterDetail
         {
             _controller = controller;
         }
+
         public GrupaPracowniczaState State
         {
             get { return _state; }
             set { _state = value; }
         }
+        public void UpdateState()
+        {
+            this.Text = _state.ToString();
+        }
+
         public int GrupaPracowniczaID 
         {
             get { return Convert.ToInt32(tbIDGrupaPracownicza.Text); }
@@ -42,6 +50,10 @@ namespace MVCWinFormsMasterDetail
             get { return tbNazwaGrupaPracownicza.Text; }
             set { tbNazwaGrupaPracownicza.Text = value; }
         }
+
+        public int PracownikID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string PracownikNazwa { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void ClearGridGrupyPracownize()
         {
             this.lvGrupyPracownicze.Columns.Clear();
@@ -120,10 +132,37 @@ namespace MVCWinFormsMasterDetail
             gbEdit.Dock = DockStyle.Top;
             lvGrupyPracownicze.Visible = true;
         }
-        public void UpdateState()
+
+
+        public void AddToGrid(Pracownik pracownik)
         {
-            this.Text = _state.ToString();
+            throw new NotImplementedException();
         }
+        public void UpdateGrid(Pracownik pracownik)
+        {
+            throw new NotImplementedException();
+        }
+        public void RemoveFromGrid(Pracownik pracownik)
+        {
+            throw new NotImplementedException();
+        }
+        public int GetIdOfSelectedInGridPracownik()
+        {
+            throw new NotImplementedException();
+        }
+        public void SetSelectedInGrid(Pracownik pracownik)
+        {
+            throw new NotImplementedException();
+        }
+        public void ShowEditGroupBoxPracownicy()
+        {
+            throw new NotImplementedException();
+        }
+        public void HideEditGroupBoxPracownicy()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion 
 
         #region EventsDelagatedToController
@@ -152,24 +191,25 @@ namespace MVCWinFormsMasterDetail
         {
             _controller.CancelGrupaPracownicza();
         }
-        private void lvPracownicy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.lvPracownicy.SelectedItems.Count > 0)
-                _controller.SelectedPracownikChanged(this.lvPracownicy.SelectedItems[0].Text);
-        }
+               
         private void btnAddGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
         {
-
+            _controller.AddPozycjaGrupaPracownicza();
         }
         private void btnEditGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
         {
-
+            _controller.EditPozycjaGrupaPracownicza();
         }
         private void btnRemoveGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
         {
-
+            _controller.RemovePozycjaGrupaPracownicza();
         }
 
+        public void ClearGridPracownicy()
+        {
+            throw new NotImplementedException();
+        }
+        
         #endregion
 
 
