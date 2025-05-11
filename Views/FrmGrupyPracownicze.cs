@@ -162,6 +162,10 @@ namespace MVCWinFormsMasterDetail
         {
             throw new NotImplementedException();
         }
+        public void ClearGridPracownicy()
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion 
 
@@ -191,26 +195,21 @@ namespace MVCWinFormsMasterDetail
         {
             _controller.CancelGrupaPracownicza();
         }
-               
-        private void btnAddGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
+        private void btnAddPracownik_Click(object sender, EventArgs e)
         {
-            _controller.AddPozycjaGrupaPracownicza();
+            _controller.AddPracownik();
         }
-        private void btnEditGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
+        private void btnEditPracownik_Click(object sender, EventArgs e)
         {
-            _controller.EditPozycjaGrupaPracownicza();
+            _controller.EditPracownik();
         }
-        private void btnRemoveGrupaPracowniczaPozycja_Click(object sender, EventArgs e)
+        private void btnRemovePracownik_Click(object sender, EventArgs e)
         {
-            _controller.RemovePozycjaGrupaPracownicza();
+            _controller.RemovePracownik();
         }
-
-        public void ClearGridPracownicy()
-        {
-            throw new NotImplementedException();
-        }
-        
         #endregion
+
+
 
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MVCWinFormsMasterDetail
 {
@@ -110,27 +111,29 @@ namespace MVCWinFormsMasterDetail
                 this._view.UpdateGrid(_seletedGrupaPracownicza);
             }
             _view.SetSelectedInGrid(_seletedGrupaPracownicza);
+            _view.State.SaveGrupaPracowniczaClick();
             _view.HideEditGroupBoxGrupaPracownicza();
             _view.UpdateState();
         }
         public void CancelGrupaPracownicza()
         {
             _view.HideEditGroupBoxGrupaPracownicza();
+            _view.State.CancelGrupaPracowniczaClick();
             _view.UpdateState();
         }
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
 
         }
-        public void AddPozycjaGrupaPracownicza()
+        public void AddPracownik()
         { 
             
         }
-        public void EditPozycjaGrupaPracownicza()
+        public void EditPracownik()
         {
 
         }
-        public void RemovePozycjaGrupaPracownicza()
+        public void RemovePracownik()
         { 
         
         }

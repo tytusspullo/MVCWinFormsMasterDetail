@@ -34,9 +34,9 @@
             this.btnAddGrupaPracownicza = new System.Windows.Forms.Button();
             this.gbEdit = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnRemoveGrupaPracowniczaPozycja = new System.Windows.Forms.Button();
-            this.btnEditGrupaPracowniczaPozycja = new System.Windows.Forms.Button();
-            this.btnAddGrupaPracowniczaPozycja = new System.Windows.Forms.Button();
+            this.btnRemovePracownik = new System.Windows.Forms.Button();
+            this.btnEditPracownik = new System.Windows.Forms.Button();
+            this.btnAddPracownik = new System.Windows.Forms.Button();
             this.lvPracownicy = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblIDGrupaPracownicza = new System.Windows.Forms.Label();
@@ -113,44 +113,44 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnRemoveGrupaPracowniczaPozycja);
-            this.panel3.Controls.Add(this.btnEditGrupaPracowniczaPozycja);
-            this.panel3.Controls.Add(this.btnAddGrupaPracowniczaPozycja);
+            this.panel3.Controls.Add(this.btnRemovePracownik);
+            this.panel3.Controls.Add(this.btnEditPracownik);
+            this.panel3.Controls.Add(this.btnAddPracownik);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(3, 172);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(954, 39);
             this.panel3.TabIndex = 7;
             // 
-            // btnRemoveGrupaPracowniczaPozycja
+            // btnRemovePracownik
             // 
-            this.btnRemoveGrupaPracowniczaPozycja.Location = new System.Drawing.Point(201, 6);
-            this.btnRemoveGrupaPracowniczaPozycja.Name = "btnRemoveGrupaPracowniczaPozycja";
-            this.btnRemoveGrupaPracowniczaPozycja.Size = new System.Drawing.Size(90, 22);
-            this.btnRemoveGrupaPracowniczaPozycja.TabIndex = 5;
-            this.btnRemoveGrupaPracowniczaPozycja.Text = "Remove";
-            this.btnRemoveGrupaPracowniczaPozycja.UseVisualStyleBackColor = true;
-            this.btnRemoveGrupaPracowniczaPozycja.Click += new System.EventHandler(this.btnRemoveGrupaPracowniczaPozycja_Click);
+            this.btnRemovePracownik.Location = new System.Drawing.Point(201, 6);
+            this.btnRemovePracownik.Name = "btnRemovePracownik";
+            this.btnRemovePracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnRemovePracownik.TabIndex = 5;
+            this.btnRemovePracownik.Text = "Remove";
+            this.btnRemovePracownik.UseVisualStyleBackColor = true;
+            this.btnRemovePracownik.Click += new System.EventHandler(this.btnRemovePracownik_Click);
             // 
-            // btnEditGrupaPracowniczaPozycja
+            // btnEditPracownik
             // 
-            this.btnEditGrupaPracowniczaPozycja.Location = new System.Drawing.Point(105, 6);
-            this.btnEditGrupaPracowniczaPozycja.Name = "btnEditGrupaPracowniczaPozycja";
-            this.btnEditGrupaPracowniczaPozycja.Size = new System.Drawing.Size(90, 22);
-            this.btnEditGrupaPracowniczaPozycja.TabIndex = 4;
-            this.btnEditGrupaPracowniczaPozycja.Text = "Edit";
-            this.btnEditGrupaPracowniczaPozycja.UseVisualStyleBackColor = true;
-            this.btnEditGrupaPracowniczaPozycja.Click += new System.EventHandler(this.btnEditGrupaPracowniczaPozycja_Click);
+            this.btnEditPracownik.Location = new System.Drawing.Point(105, 6);
+            this.btnEditPracownik.Name = "btnEditPracownik";
+            this.btnEditPracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnEditPracownik.TabIndex = 4;
+            this.btnEditPracownik.Text = "Edit";
+            this.btnEditPracownik.UseVisualStyleBackColor = true;
+            this.btnEditPracownik.Click += new System.EventHandler(this.btnEditPracownik_Click);
             // 
-            // btnAddGrupaPracowniczaPozycja
+            // btnAddPracownik
             // 
-            this.btnAddGrupaPracowniczaPozycja.Location = new System.Drawing.Point(9, 6);
-            this.btnAddGrupaPracowniczaPozycja.Name = "btnAddGrupaPracowniczaPozycja";
-            this.btnAddGrupaPracowniczaPozycja.Size = new System.Drawing.Size(90, 22);
-            this.btnAddGrupaPracowniczaPozycja.TabIndex = 3;
-            this.btnAddGrupaPracowniczaPozycja.Text = "Add";
-            this.btnAddGrupaPracowniczaPozycja.UseVisualStyleBackColor = true;
-            this.btnAddGrupaPracowniczaPozycja.Click += new System.EventHandler(this.btnAddGrupaPracowniczaPozycja_Click);
+            this.btnAddPracownik.Location = new System.Drawing.Point(9, 6);
+            this.btnAddPracownik.Name = "btnAddPracownik";
+            this.btnAddPracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnAddPracownik.TabIndex = 3;
+            this.btnAddPracownik.Text = "Add";
+            this.btnAddPracownik.UseVisualStyleBackColor = true;
+            this.btnAddPracownik.Click += new System.EventHandler(this.btnAddPracownik_Click);
             // 
             // lvPracownicy
             // 
@@ -164,7 +164,6 @@
             this.lvPracownicy.TabIndex = 4;
             this.lvPracownicy.UseCompatibleStateImageBehavior = false;
             this.lvPracownicy.View = System.Windows.Forms.View.Details;
-            
             // 
             // panel1
             // 
@@ -296,8 +295,8 @@
         private System.Windows.Forms.Button btnCancelGrupaPracownicza;
         private System.Windows.Forms.Button btnSaveGrupaPracownicza;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnRemoveGrupaPracowniczaPozycja;
-        private System.Windows.Forms.Button btnEditGrupaPracowniczaPozycja;
-        private System.Windows.Forms.Button btnAddGrupaPracowniczaPozycja;
+        private System.Windows.Forms.Button btnRemovePracownik;
+        private System.Windows.Forms.Button btnEditPracownik;
+        private System.Windows.Forms.Button btnAddPracownik;
     }
 }
