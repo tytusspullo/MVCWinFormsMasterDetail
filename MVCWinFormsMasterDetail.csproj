@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Views\ViewStatePaternElements\EdycjaGrupaPracowniczaState.cs" />
-    <Compile Include="Views\ViewStatePaternElements\EdycjaPozycjiGrupaPracowniczaState.cs" />
+    <Compile Include="Views\ViewStatePaternElements\EdycjaPracownikState.cs" />
     <Compile Include="Views\ViewStatePaternElements\GrupaPracowniczaState.cs" />
     <Compile Include="Views\ViewStatePaternElements\PrzegladanieGrupaPracowniczaState.cs" />
     <Compile Include="Views\FrmGrupyPracownicze.cs">

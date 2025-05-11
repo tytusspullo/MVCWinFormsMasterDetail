@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace MVCWinFormsMasterDetail
 {
-    public class EdycjaPozycjiGrupaPracowniczaState:GrupaPracowniczaState
+    public class EdycjaPracownikState:GrupaPracowniczaState
     {
-        public EdycjaPozycjiGrupaPracowniczaState(IGrupyPracowniczeViewMethodsToManipulateView frm) : base(frm)
+        public EdycjaPracownikState(IGrupyPracowniczeViewMethodsToManipulateView frm) : base(frm)
         {
         }
 
 
         public override string ToString()
         {
-            return "EdycjaPozycjiGrupaPracowniczaState"; 
+            return "EdycjaPracownikState"; 
         }
     }
 }
