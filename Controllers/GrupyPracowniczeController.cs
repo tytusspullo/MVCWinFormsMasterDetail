@@ -12,6 +12,7 @@ namespace MVCWinFormsMasterDetail
         IGrupyPracowniczeViewMethodsToManipulateView _view;
         List<GrupaPracownicza> _grupyPracownicze = new List<GrupaPracownicza>();
         GrupaPracownicza _seletedGrupaPracownicza = null;
+        Pracownik _selectedPracownik = null;
 
         public GrupyPracowniczeController(IGrupyPracowniczeViewMethodsToManipulateView view, List<GrupaPracownicza> grupyPracownicze)
         {
@@ -27,6 +28,10 @@ namespace MVCWinFormsMasterDetail
             foreach (GrupaPracownicza grupaPracownicza in _grupyPracownicze)
                 _view.AddToGrid(grupaPracownicza);
             _view.SetSelectedInGrid((GrupaPracownicza)_grupyPracownicze[0]);
+            
+            _view.ClearGridPracownicy();
+            
+
             _view.UpdateState();
         }
         private void updateViewDetailValues(GrupaPracownicza grupaPracownicza)
@@ -34,10 +39,21 @@ namespace MVCWinFormsMasterDetail
             _view.GrupaPracowniczaID = grupaPracownicza.IdGrupyPracowniczej;
             _view.GrupaPracowniczaNazwa = grupaPracownicza.NazwaGrupyPracowniczej;
         }
+        private void updateViewDetailValues(Pracownik pracownik)
+        {
+            _view.PracownikID = pracownik.IdPracownika;
+            _view.PracownikNazwa = pracownik.Nazwisko;
+        }
+
         private void updateGrupaPracowniczaWithViewValues(GrupaPracownicza grupaPracownicza)
         {
             grupaPracownicza.IdGrupyPracowniczej = _view.GrupaPracowniczaID;
             grupaPracownicza.NazwaGrupyPracowniczej = _view.GrupaPracowniczaNazwa;
+        }
+        private void updatePracownikWithViewValues(Pracownik pracownik)
+        {
+            pracownik.IdPracownika = _view.PracownikID;
+            pracownik.Nazwisko = _view.PracownikNazwa;
         }
 
         #region EventsDelegatedFromView
@@ -123,19 +139,33 @@ namespace MVCWinFormsMasterDetail
         }
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
-
+            foreach (Pracownik pracownik in _seletedGrupaPracownicza.Pracownicy)
+            {
+                if (pracownik.IdPracownika == Convert.ToInt32(selectedPracownikId))
+                {
+                    _selectedPracownik = pracownik;
+                    updateViewDetailValues(pracownik);
+                    _view.SetSelectedInGrid(pracownik);
+                    break;
+                }
+            }
         }
         public void AddPracownik()
-        { 
-            
+        {
+            var pracownik = new Pracownik(0, "", "");
+            _selectedPracownik = pracownik;
+            this.updateViewDetailValues(_selectedPracownik);
+            _view.ShowEditGroupBoxPracownicy();
+            _view.State.AddPracownikClick();
+            _view.UpdateState();
         }
         public void EditPracownik()
         {
-
+            _view.State.EditPracownikClick();
         }
         public void RemovePracownik()
         { 
-        
+            
         }
         #endregion
 

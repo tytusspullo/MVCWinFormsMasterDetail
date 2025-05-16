@@ -27,6 +27,23 @@ namespace MVCWinFormsMasterDetail
         {
         }
 
+        public override void AddPracownikClick()
+        {
+            
+        }
+        public override void EditPracownikClick()
+        {
+            
+        }
+        public override void SavePracownikClick()
+        {
+            
+        }
+        public override void CancelPracownikClick()
+        {
+            
+        }
+
         public override string ToString()
         {
             return "PrzegladanieGrupaPracowniczaState";

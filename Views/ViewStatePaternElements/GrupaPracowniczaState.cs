@@ -30,6 +30,22 @@ namespace MVCWinFormsMasterDetail
         { 
         
         }
+        public virtual void AddPracownikClick()
+        {
+
+        }
+        public virtual void EditPracownikClick()
+        {
+
+        }
+        public virtual void SavePracownikClick()
+        {
+
+        }
+        public virtual void CancelPracownikClick()
+        {
+
+        }
         public override string ToString()
         {
             return "GrupaPracowniczaState";

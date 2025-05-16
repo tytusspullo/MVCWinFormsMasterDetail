@@ -5,10 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace MVCWinFormsMasterDetail
 {
@@ -51,8 +53,21 @@ namespace MVCWinFormsMasterDetail
             set { tbNazwaGrupaPracownicza.Text = value; }
         }
 
-        public int PracownikID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PracownikNazwa { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int PracownikID 
+        {
+            get { return Convert.ToInt32(tbIDPracownika.Text); }
+            set { tbIDPracownika.Text = value.ToString(); }
+        }
+        public string PracownikNazwisko 
+        {
+            get { return tbNazwisko.Text; }
+            set { tbNazwisko.Text = value.ToString(); }
+        }
+        public string PracownikImie 
+        {
+            get { return tbImie.Text; }
+            set { tbImie.Text = value.ToString(); }
+        }
 
         public void ClearGridGrupyPracownize()
         {
@@ -73,7 +88,7 @@ namespace MVCWinFormsMasterDetail
             ListViewItem parent;
             parent = this.lvGrupyPracownicze.Items.Add(grupaPracownicza.IdGrupyPracowniczej.ToString());
             parent.SubItems.Add(grupaPracownicza.NazwaGrupyPracowniczej);
-        }
+        } 
         public void UpdateGrid(GrupaPracownicza grupaPracownicza)
         {
             ListViewItem rowToUpdate = null;
@@ -134,39 +149,80 @@ namespace MVCWinFormsMasterDetail
         }
 
 
+        public void ClearGridPracownicy()
+        {
+            this.lvPracownicy.Columns.Clear();
+            this.lvPracownicy.Columns.Add("Id", 150, HorizontalAlignment.Left);
+            this.lvPracownicy.Columns.Add("Nazwisko Imię", 150, HorizontalAlignment.Left);
+            this.lvPracownicy.Items.Clear();
+        }
         public void AddToGrid(Pracownik pracownik)
         {
-            throw new NotImplementedException();
+            ListViewItem parent;
+            parent = this.lvPracownicy.Items.Add(pracownik.IdPracownika.ToString());
+            parent.SubItems.Add(pracownik.Nazwisko + " " + pracownik.Imie);
         }
         public void UpdateGrid(Pracownik pracownik)
         {
-            throw new NotImplementedException();
+            ListViewItem rowToUpdate = null;
+
+            foreach (ListViewItem row in this.lvPracownicy.Items)
+            {
+                if (row.Text == pracownik.IdPracownika.ToString())
+                {
+                    rowToUpdate = row;
+                }
+            }
+
+            if (rowToUpdate != null)
+            {
+                rowToUpdate.Text = pracownik.IdPracownika.ToString();
+                rowToUpdate.SubItems[1].Text = pracownik.Nazwisko + " " + pracownik.Imie;
+            }
         }
         public void RemoveFromGrid(Pracownik pracownik)
         {
-            throw new NotImplementedException();
+            ListViewItem rowToRemove = null;
+
+            foreach (ListViewItem row in this.lvPracownicy.Items)
+            {
+                if (row.Text == pracownik.IdPracownika.ToString())
+                {
+                    rowToRemove = row;
+                }
+            }
+
+            if (rowToRemove != null)
+            {
+                this.lvPracownicy.Items.Remove(rowToRemove);
+                this.lvPracownicy.Focus();
+            }
         }
         public int GetIdOfSelectedInGridPracownik()
         {
-            throw new NotImplementedException();
+            if (this.lvPracownicy.SelectedItems.Count > 0)
+                return Convert.ToInt32(lvPracownicy.SelectedItems[0].Text);
+            else
+                return 0;
         }
         public void SetSelectedInGrid(Pracownik pracownik)
         {
-            throw new NotImplementedException();
+            foreach (ListViewItem row in this.lvPracownicy.Items)
+            {
+                if (row.Text == pracownik.IdPracownika.ToString())
+                {
+                    row.Selected = true;
+                }
+            }
         }
         public void ShowEditGroupBoxPracownicy()
         {
-            throw new NotImplementedException();
+            pnEditPracownik.Visible = true;
         }
         public void HideEditGroupBoxPracownicy()
         {
-            throw new NotImplementedException();
+            pnEditPracownik.Visible = false;
         }
-        public void ClearGridPracownicy()
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion 
 
         #region EventsDelagatedToController
@@ -207,9 +263,12 @@ namespace MVCWinFormsMasterDetail
         {
             _controller.RemovePracownik();
         }
+        private void lvPracownicy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lvPracownicy.SelectedItems.Count > 0)
+                this._controller.SelectedPracownikChanged(this.lvPracownicy.SelectedItems[0].Text);
+        }
         #endregion
-
-
 
 
     }

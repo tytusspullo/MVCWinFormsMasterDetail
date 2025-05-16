@@ -34,7 +34,8 @@ namespace MVCWinFormsMasterDetail
         int GetIdOfSelectedInGridPracownik();
         void SetSelectedInGrid(Pracownik pracownik);
         int PracownikID { get; set; }
-        string PracownikNazwa { get; set; }
+        string PracownikNazwisko { get; set; }
+        string PracownikImie { get; set; }
         void ShowEditGroupBoxPracownicy();
         void HideEditGroupBoxPracownicy();
 
