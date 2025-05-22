@@ -34,6 +34,8 @@
             this.btnAddGrupaPracownicza = new System.Windows.Forms.Button();
             this.gbEdit = new System.Windows.Forms.GroupBox();
             this.pnEditPracownik = new System.Windows.Forms.Panel();
+            this.lblIDPracownika = new System.Windows.Forms.Label();
+            this.tbIDPracownika = new System.Windows.Forms.TextBox();
             this.lblNazwisko = new System.Windows.Forms.Label();
             this.tbNazwisko = new System.Windows.Forms.TextBox();
             this.tbImie = new System.Windows.Forms.TextBox();
@@ -52,8 +54,8 @@
             this.btnCancelGrupaPracownicza = new System.Windows.Forms.Button();
             this.btnSaveGrupaPracownicza = new System.Windows.Forms.Button();
             this.lvGrupyPracownicze = new System.Windows.Forms.ListView();
-            this.tbIDPracownika = new System.Windows.Forms.TextBox();
-            this.lblIDPracownika = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.gbButtonsGrupyPracownicze.SuspendLayout();
             this.gbEdit.SuspendLayout();
             this.pnEditPracownik.SuspendLayout();
@@ -122,6 +124,8 @@
             // 
             // pnEditPracownik
             // 
+            this.pnEditPracownik.Controls.Add(this.button2);
+            this.pnEditPracownik.Controls.Add(this.button1);
             this.pnEditPracownik.Controls.Add(this.lblIDPracownika);
             this.pnEditPracownik.Controls.Add(this.tbIDPracownika);
             this.pnEditPracownik.Controls.Add(this.lblNazwisko);
@@ -133,6 +137,23 @@
             this.pnEditPracownik.Name = "pnEditPracownik";
             this.pnEditPracownik.Size = new System.Drawing.Size(954, 84);
             this.pnEditPracownik.TabIndex = 3;
+            this.pnEditPracownik.Visible = false;
+            // 
+            // lblIDPracownika
+            // 
+            this.lblIDPracownika.AutoSize = true;
+            this.lblIDPracownika.Location = new System.Drawing.Point(51, 8);
+            this.lblIDPracownika.Name = "lblIDPracownika";
+            this.lblIDPracownika.Size = new System.Drawing.Size(21, 13);
+            this.lblIDPracownika.TabIndex = 9;
+            this.lblIDPracownika.Text = "ID:";
+            // 
+            // tbIDPracownika
+            // 
+            this.tbIDPracownika.Location = new System.Drawing.Point(78, 5);
+            this.tbIDPracownika.Name = "tbIDPracownika";
+            this.tbIDPracownika.Size = new System.Drawing.Size(137, 20);
+            this.tbIDPracownika.TabIndex = 8;
             // 
             // lblNazwisko
             // 
@@ -311,21 +332,25 @@
             this.lvGrupyPracownicze.View = System.Windows.Forms.View.Details;
             this.lvGrupyPracownicze.SelectedIndexChanged += new System.EventHandler(this.lvGrupyPracownicze_SelectedIndexChanged);
             // 
-            // tbIDPracownika
+            // button1
             // 
-            this.tbIDPracownika.Location = new System.Drawing.Point(78, 5);
-            this.tbIDPracownika.Name = "tbIDPracownika";
-            this.tbIDPracownika.Size = new System.Drawing.Size(137, 20);
-            this.tbIDPracownika.TabIndex = 8;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(759, 51);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 22);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // lblIDPracownika
+            // button2
             // 
-            this.lblIDPracownika.AutoSize = true;
-            this.lblIDPracownika.Location = new System.Drawing.Point(51, 8);
-            this.lblIDPracownika.Name = "lblIDPracownika";
-            this.lblIDPracownika.Size = new System.Drawing.Size(21, 13);
-            this.lblIDPracownika.TabIndex = 9;
-            this.lblIDPracownika.Text = "ID:";
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(855, 51);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 22);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmGrupyPracownicze
             // 
@@ -379,5 +404,7 @@
         private System.Windows.Forms.Label lblImie;
         private System.Windows.Forms.Label lblIDPracownika;
         private System.Windows.Forms.TextBox tbIDPracownika;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

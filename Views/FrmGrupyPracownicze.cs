@@ -65,7 +65,7 @@ namespace MVCWinFormsMasterDetail
         }
         public string PracownikImie 
         {
-            get { return tbImie.Text; }
+            get { return tbImie.Text; }    
             set { tbImie.Text = value.ToString(); }
         }
 

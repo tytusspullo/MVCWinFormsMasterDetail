@@ -30,10 +30,8 @@ namespace MVCWinFormsMasterDetail
             _view.SetSelectedInGrid((GrupaPracownicza)_grupyPracownicze[0]);
             
             _view.ClearGridPracownicy();
-            
-
             _view.UpdateState();
-        }
+        } 
         private void updateViewDetailValues(GrupaPracownicza grupaPracownicza)
         {
             _view.GrupaPracowniczaID = grupaPracownicza.IdGrupyPracowniczej;
@@ -42,7 +40,8 @@ namespace MVCWinFormsMasterDetail
         private void updateViewDetailValues(Pracownik pracownik)
         {
             _view.PracownikID = pracownik.IdPracownika;
-            _view.PracownikNazwa = pracownik.Nazwisko;
+            _view.PracownikNazwisko = pracownik.Nazwisko;
+            _view.PracownikImie = pracownik.Imie;
         }
 
         private void updateGrupaPracowniczaWithViewValues(GrupaPracownicza grupaPracownicza)
@@ -53,7 +52,8 @@ namespace MVCWinFormsMasterDetail
         private void updatePracownikWithViewValues(Pracownik pracownik)
         {
             pracownik.IdPracownika = _view.PracownikID;
-            pracownik.Nazwisko = _view.PracownikNazwa;
+            pracownik.Nazwisko = _view.PracownikNazwisko;
+            pracownik.Imie = _view.PracownikImie;
         }
 
         #region EventsDelegatedFromView
