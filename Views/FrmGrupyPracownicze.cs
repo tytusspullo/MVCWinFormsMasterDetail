@@ -25,7 +25,6 @@ namespace MVCWinFormsMasterDetail
             InitializeComponent();
         } 
 
-
         #region IGrupyPracowniczeView_MethodsNeededToManipulateView
         public void SetController(GrupyPracowniczeController controller)
         {
@@ -277,7 +276,5 @@ namespace MVCWinFormsMasterDetail
             _controller.CancelEditPracownik();
         }
         #endregion
-
-
     }
 }
