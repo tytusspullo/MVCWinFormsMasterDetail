@@ -41,7 +41,7 @@ namespace MVCWinFormsMasterDetail
         {
             this.Text = _state.ToString();
         }
-
+        
         public int GrupaPracowniczaID 
         {
             get { return Convert.ToInt32(tbIDGrupaPracownicza.Text); }
@@ -267,6 +267,14 @@ namespace MVCWinFormsMasterDetail
         {
             if (this.lvPracownicy.SelectedItems.Count > 0)
                 this._controller.SelectedPracownikChanged(this.lvPracownicy.SelectedItems[0].Text);
+        }
+        private void btnSaveEditPracownik_Click(object sender, EventArgs e)
+        {
+            _controller.SaveEditPracownik();
+        }
+        private void btnCancelEditPracownik_Click(object sender, EventArgs e)
+        {
+            _controller.CancelEditPracownik();
         }
         #endregion
 

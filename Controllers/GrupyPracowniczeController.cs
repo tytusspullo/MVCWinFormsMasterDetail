@@ -162,10 +162,21 @@ namespace MVCWinFormsMasterDetail
         public void EditPracownik()
         {
             _view.State.EditPracownikClick();
+            _view.UpdateState();
         }
         public void RemovePracownik()
         { 
             
+        }
+        public void SaveEditPracownik() 
+        {
+            _view.State.SavePracownikClick();
+            _view.UpdateState();
+        }
+        public void CancelEditPracownik()
+        {
+            _view.State.CancelPracownikClick();
+            _view.UpdateState();
         }
         #endregion
 

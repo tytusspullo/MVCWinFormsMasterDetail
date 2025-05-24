@@ -9,17 +9,18 @@ namespace MVCWinFormsMasterDetail
 {
     public class EdycjaGrupaPracowniczaState:GrupaPracowniczaState
     {
-
         public EdycjaGrupaPracowniczaState(IGrupyPracowniczeViewMethodsToManipulateView frm) : base(frm)
         { 
         
         }
 
-        public override void AddGrupaPracowniczaClick()
+        public override void AddPracownikClick()
         {
+            _frm.State = new EdycjaPracownikState(_frm);
         }
-        public override void EditGrupaPracowniczaClick()
+        public override void EditPracownikClick()
         {
+            _frm.State = new EdycjaPracownikState(_frm);
         }
         public override void SaveGrupaPracowniczaClick()
         {
