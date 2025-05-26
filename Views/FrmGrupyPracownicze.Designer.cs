@@ -257,6 +257,7 @@
             this.lvPracownicy.GridLines = true;
             this.lvPracownicy.HideSelection = false;
             this.lvPracownicy.Location = new System.Drawing.Point(3, 89);
+            this.lvPracownicy.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
             this.lvPracownicy.Name = "lvPracownicy";
             this.lvPracownicy.Size = new System.Drawing.Size(954, 176);
             this.lvPracownicy.TabIndex = 4;
@@ -347,6 +348,7 @@
             this.lvGrupyPracownicze.GridLines = true;
             this.lvGrupyPracownicze.HideSelection = false;
             this.lvGrupyPracownicze.Location = new System.Drawing.Point(0, 371);
+            this.lvGrupyPracownicze.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
             this.lvGrupyPracownicze.Name = "lvGrupyPracownicze";
             this.lvGrupyPracownicze.Size = new System.Drawing.Size(960, 267);
             this.lvGrupyPracownicze.TabIndex = 2;

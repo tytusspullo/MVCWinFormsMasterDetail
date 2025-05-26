@@ -147,7 +147,7 @@ namespace MVCWinFormsMasterDetail
             lvGrupyPracownicze.Visible = true;
         }
 
-
+         
         public void ClearGridPracownicy()
         {
             this.lvPracownicy.Columns.Clear();

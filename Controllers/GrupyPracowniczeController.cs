@@ -161,6 +161,8 @@ namespace MVCWinFormsMasterDetail
         }
         public void EditPracownik()
         {
+            this.updateViewDetailValues(_selectedPracownik);
+            _view.ShowEditGroupBoxPracownicy();
             _view.State.EditPracownikClick();
             _view.UpdateState();
         }
