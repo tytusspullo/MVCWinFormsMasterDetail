@@ -28,35 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGrupyPracownicze = new System.Windows.Forms.Button();
+            this.mnuStrip = new System.Windows.Forms.MenuStrip();
+            this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grupyPracowniczeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnGrupyPracownicze
+            // mnuStrip
             // 
-            this.btnGrupyPracownicze.Location = new System.Drawing.Point(12, 12);
-            this.btnGrupyPracownicze.Name = "btnGrupyPracownicze";
-            this.btnGrupyPracownicze.Size = new System.Drawing.Size(250, 63);
-            this.btnGrupyPracownicze.TabIndex = 0;
-            this.btnGrupyPracownicze.Text = "Grupy Pracownicze";
-            this.btnGrupyPracownicze.UseVisualStyleBackColor = true;
-            this.btnGrupyPracownicze.Click += new System.EventHandler(this.btnGrupyPracownicze_Click);
+            this.mnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainToolStripMenuItem});
+            this.mnuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mnuStrip.Name = "mnuStrip";
+            this.mnuStrip.Size = new System.Drawing.Size(800, 24);
+            this.mnuStrip.TabIndex = 1;
+            this.mnuStrip.Text = "menuStrip1";
+            // 
+            // mainToolStripMenuItem
+            // 
+            this.mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grupyPracowniczeToolStripMenuItem,
+            this.zamknijToolStripMenuItem});
+            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.mainToolStripMenuItem.Text = "Main";
+            // 
+            // grupyPracowniczeToolStripMenuItem
+            // 
+            this.grupyPracowniczeToolStripMenuItem.Name = "grupyPracowniczeToolStripMenuItem";
+            this.grupyPracowniczeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.grupyPracowniczeToolStripMenuItem.Text = "Grupy Pracownicze";
+            this.grupyPracowniczeToolStripMenuItem.Click += new System.EventHandler(this.grupyPracowniczeToolStripMenuItem_Click);
+            // 
+            // zamknijToolStripMenuItem
+            // 
+            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zamknijToolStripMenuItem.Text = "Zamknij";
+            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGrupyPracownicze);
+            this.Controls.Add(this.mnuStrip);
+            this.MainMenuStrip = this.mnuStrip;
             this.Name = "FrmMain";
-            this.Text = "FrmMain";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.Text = "Grupy Pracownicze";
+            this.mnuStrip.ResumeLayout(false);
+            this.mnuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnGrupyPracownicze;
+        private System.Windows.Forms.MenuStrip mnuStrip;
+        private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grupyPracowniczeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
     }
 }
 

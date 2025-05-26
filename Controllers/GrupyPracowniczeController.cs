@@ -172,11 +172,24 @@ namespace MVCWinFormsMasterDetail
         }
         public void SaveEditPracownik() 
         {
+            updatePracownikWithViewValues(_selectedPracownik);
+            if (!this._seletedGrupaPracownicza.Pracownicy.Contains(_selectedPracownik))
+            {
+                this._seletedGrupaPracownicza.Pracownicy.Add(_selectedPracownik);
+                this._view.AddToGrid(_selectedPracownik);
+            }
+            else
+            {
+                this._view.UpdateGrid(_selectedPracownik);
+            }
+            _view.SetSelectedInGrid(_selectedPracownik);
             _view.State.SavePracownikClick();
+            _view.HideEditGroupBoxPracownicy();
             _view.UpdateState();
         }
         public void CancelEditPracownik()
         {
+            _view.HideEditGroupBoxPracownicy();
             _view.State.CancelPracownikClick();
             _view.UpdateState();
         }

@@ -14,18 +14,19 @@ namespace MVCWinFormsMasterDetail
     {
         public FrmMain()
         {
+            IsMdiContainer = true;
+
             InitializeComponent();
         }
 
-        private void btnGrupyPracownicze_Click(object sender, EventArgs e)
+        private void Load()
         {
             List<GrupaPracownicza> grupyPracownicze = new List<GrupaPracownicza>();
-
 
             GrupaPracownicza grupa = new GrupaPracownicza();
             grupa.IdGrupyPracowniczej = 1;
             grupa.NazwaGrupyPracowniczej = "Apteka";
-            grupa.Pracownicy.Add(new Pracownik(11, "Nowak", "Jan") );
+            grupa.Pracownicy.Add(new Pracownik(11, "Nowak", "Jan"));
             grupa.Pracownicy.Add(new Pracownik(12, "Kowalski", "Piotr"));
             grupyPracownicze.Add(grupa);
 
@@ -42,9 +43,16 @@ namespace MVCWinFormsMasterDetail
             view.Show();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
+        private void grupyPracowniczeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Load();
         }
+
+        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }
