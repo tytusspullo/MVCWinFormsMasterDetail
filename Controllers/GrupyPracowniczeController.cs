@@ -110,6 +110,22 @@ namespace MVCWinFormsMasterDetail
                     _seletedGrupaPracownicza = grupaPracownicza;
                     updateViewDetailValues(grupaPracownicza);
                     _view.SetSelectedInGrid(grupaPracownicza);
+                    
+                    _view.ClearGridPracownicy();
+                    if (_seletedGrupaPracownicza.Pracownicy.Count > 0)
+                    {
+                        foreach (Pracownik pracownik in _seletedGrupaPracownicza.Pracownicy)
+                        {
+                            _selectedPracownik = _seletedGrupaPracownicza.Pracownicy[0];
+                            if (pracownik.IdPracownika == Convert.ToInt32(_selectedPracownik.IdPracownika))
+                            {
+                                //_selectedPracownik = pracownik;
+                                updateViewDetailValues(pracownik);
+                                _view.SetSelectedInGrid(pracownik);
+                                break;
+                            }
+                        }
+                    }
                     break;
                 }
             }

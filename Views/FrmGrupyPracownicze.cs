@@ -220,7 +220,7 @@ namespace MVCWinFormsMasterDetail
         }
         public void HideEditGroupBoxPracownicy()
         {
-            pnEditPracownik.Visible = false;
+            pnEditPracownik.Visible = true;//= false;
         }
         #endregion 
 
