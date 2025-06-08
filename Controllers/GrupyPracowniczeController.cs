@@ -74,7 +74,7 @@ namespace MVCWinFormsMasterDetail
         } 
         public void RemoveGrupaPracownicza()
         {
-            int id = this._view.GetIdOfSelectedInGridGrupaPracownicza();
+            int id = _seletedGrupaPracownicza.IdGrupyPracowniczej;
             GrupaPracownicza grupaPracowniczaToRemove = null;
 
             if (id != 0)
@@ -119,7 +119,6 @@ namespace MVCWinFormsMasterDetail
                             _selectedPracownik = _seletedGrupaPracownicza.Pracownicy[0];
                             if (pracownik.IdPracownika == Convert.ToInt32(_selectedPracownik.IdPracownika))
                             {
-                                //_selectedPracownik = pracownik;
                                 updateViewDetailValues(pracownik);
                                 _view.SetSelectedInGrid(pracownik);
                                 break;
