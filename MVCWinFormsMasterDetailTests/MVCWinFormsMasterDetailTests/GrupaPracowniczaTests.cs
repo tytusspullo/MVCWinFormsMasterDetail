@@ -18,7 +18,7 @@ namespace MVCWinFormsMasterDetailTests
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
             controller.AddGrupaPracownicza();
             controller.SaveGrupaPracownicza();
-            
+
             Assert.IsTrue((grupyPracownicze.Count == 1));
         }
 
@@ -33,7 +33,7 @@ namespace MVCWinFormsMasterDetailTests
             grupyPracownicze.Add(new GrupaPracownicza(1, "Nowak Piotr"));
             grupyPracownicze.Add(new GrupaPracownicza(2, "Nowak Adam"));
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
-            
+
             controller.SelectedGrupaPracowniczaChanged("2");
             view.GrupaPracowniczaNazwa = newName;
             controller.EditGrupaPracownicza();
