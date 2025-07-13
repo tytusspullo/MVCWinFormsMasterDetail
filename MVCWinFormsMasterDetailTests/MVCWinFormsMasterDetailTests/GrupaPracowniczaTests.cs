@@ -61,5 +61,25 @@ namespace MVCWinFormsMasterDetailTests
             Assert.IsTrue(grupyPracownicze.Count == 2);
 
         }
+
+        [TestMethod]
+        public void EdytujGrupaPracowniczaDodajPracownika()
+        {
+            FrmGrupyPracownicze view = new FrmGrupyPracownicze();
+            var grupyPracownicze = new List<GrupaPracownicza>();
+            grupyPracownicze.Add(new GrupaPracownicza(1, "Nowak Piotr"));
+            grupyPracownicze.Add(new GrupaPracownicza(2, "Nowak Adam"));
+            var controller = new GrupyPracowniczeController(view, grupyPracownicze);
+            
+            controller.SelectedGrupaPracowniczaChanged("2");
+            controller.EditGrupaPracownicza();
+            controller.AddPracownik();
+            view.PracownikID = 3;
+            view.PracownikImie = "Piotr";
+            view.PracownikNazwisko = "Nowak";
+            controller.SaveEditPracownik();
+            Assert.IsTrue(grupyPracownicze[1].Pracownicy.Count == 1);
+        }
+
     }
 }
