@@ -17,6 +17,10 @@ namespace MVCWinFormsMasterDetail
         public int IdPracownika { get; set; }
         public string Nazwisko { get; set; }
         public string Imie {  get; set; }
-
+        public Pracownik DeepCopy()
+        {
+            Pracownik other = (Pracownik)MemberwiseClone();
+            return other;
+        }
     }
 }

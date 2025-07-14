@@ -26,7 +26,14 @@ namespace MVCWinFormsMasterDetail
         {
             get { return _pracownicy; }
         }
-
-
+        public GrupaPracownicza DeepCopy()
+        {
+            var other = new GrupaPracownicza(IdGrupyPracowniczej, NazwaGrupyPracowniczej);
+            foreach (var item in _pracownicy)
+            {
+                other.Pracownicy.Add(item.DeepCopy());
+            }
+            return other;
+        }
     }
 }

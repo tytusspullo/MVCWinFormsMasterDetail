@@ -81,5 +81,41 @@ namespace MVCWinFormsMasterDetailTests
             Assert.IsTrue(grupyPracownicze[1].Pracownicy.Count == 1);
         }
 
+
+        [TestMethod]
+        public void GrupaPracowniczaTestKopii()
+        {
+            bool pozycjeKopii = false;
+
+            GrupaPracownicza grupa = new GrupaPracownicza();
+            grupa.IdGrupyPracowniczej = 10;
+            grupa.NazwaGrupyPracowniczej = "Apteka";
+            var pracownik1 = new Pracownik(1, "Nowak", "Janusz");
+            var pracownik2 = new Pracownik(2, "Kowalski", "Zbigniew");
+            var pracownik3 = new Pracownik(3, "Nowak", "Ania");
+            grupa.Pracownicy.Add(pracownik1);
+            grupa.Pracownicy.Add(pracownik2);
+            grupa.Pracownicy.Add(pracownik3);
+
+            GrupaPracownicza kopia = grupa.DeepCopy();
+            foreach (var item in kopia.Pracownicy)
+            {
+                
+            }
+
+            Assert.IsTrue(kopia.IdGrupyPracowniczej == grupa.IdGrupyPracowniczej &&
+                            kopia.NazwaGrupyPracowniczej == grupa.NazwaGrupyPracowniczej &&
+                            kopia.Pracownicy.Count == grupa.Pracownicy.Count
+                );
+        }
+
+        [TestMethod]
+        public void PracownikTestKopii()
+        {
+            Pracownik pracownik = new Pracownik(2,"Kowalski","Tadeusz");
+            var kopia = pracownik.DeepCopy();
+            bool same = ReferenceEquals(pracownik, kopia);
+            Assert.IsTrue(same);
+        }
     }
 }
