@@ -102,19 +102,14 @@ namespace MVCWinFormsMasterDetail
         }
         public void SelectedGrupaPracowniczaChanged(string selectedGrupaPracowniczaId)
         {
-            GrupaPracownicza tempGrupaPracownicza = null; //until save
 
             foreach (GrupaPracownicza grupaPracownicza in this._grupyPracownicze)
             {
                 if (grupaPracownicza.IdGrupyPracowniczej == Convert.ToInt32(selectedGrupaPracowniczaId))
                 {
-                    tempGrupaPracownicza = new GrupaPracownicza(grupaPracownicza.IdGrupyPracowniczej, grupaPracownicza.NazwaGrupyPracowniczej);
-                    
-
-
-                    _seletedGrupaPracownicza = tempGrupaPracownicza;
-                    updateViewDetailValues(grupaPracownicza);
-                    _view.SetSelectedInGrid(grupaPracownicza);
+                    _seletedGrupaPracownicza = (GrupaPracownicza)grupaPracownicza.Clone();
+                    updateViewDetailValues(_seletedGrupaPracownicza);
+                    _view.SetSelectedInGrid(_seletedGrupaPracownicza);
                     
                     _view.ClearGridPracownicy();
                     if (_seletedGrupaPracownicza.Pracownicy.Count > 0)
