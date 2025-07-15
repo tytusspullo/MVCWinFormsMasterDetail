@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCWinFormsMasterDetail
 {
-    public class GrupaPracownicza
+    public class GrupaPracownicza: ICloneable
     {
         private List<Pracownik> _pracownicy = null;
 
@@ -26,12 +26,12 @@ namespace MVCWinFormsMasterDetail
         {
             get { return _pracownicy; }
         }
-        public GrupaPracownicza DeepCopy()
+        public object Clone()
         {
             var other = new GrupaPracownicza(IdGrupyPracowniczej, NazwaGrupyPracowniczej);
             foreach (var item in _pracownicy)
             {
-                other.Pracownicy.Add(item.DeepCopy());
+                other.Pracownicy.Add((Pracownik)item.Clone());
             }
             return other;
         }

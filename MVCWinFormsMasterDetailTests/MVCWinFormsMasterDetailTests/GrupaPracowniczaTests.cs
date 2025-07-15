@@ -90,6 +90,7 @@ namespace MVCWinFormsMasterDetailTests
             GrupaPracownicza grupa = new GrupaPracownicza();
             grupa.IdGrupyPracowniczej = 10;
             grupa.NazwaGrupyPracowniczej = "Apteka";
+            //pozycje
             var pracownik1 = new Pracownik(1, "Nowak", "Janusz");
             var pracownik2 = new Pracownik(2, "Kowalski", "Zbigniew");
             var pracownik3 = new Pracownik(3, "Nowak", "Ania");
@@ -97,11 +98,7 @@ namespace MVCWinFormsMasterDetailTests
             grupa.Pracownicy.Add(pracownik2);
             grupa.Pracownicy.Add(pracownik3);
 
-            GrupaPracownicza kopia = grupa.DeepCopy();
-            foreach (var item in kopia.Pracownicy)
-            {
-                
-            }
+            GrupaPracownicza kopia = (GrupaPracownicza)grupa.Clone();
 
             Assert.IsTrue(kopia.IdGrupyPracowniczej == grupa.IdGrupyPracowniczej &&
                             kopia.NazwaGrupyPracowniczej == grupa.NazwaGrupyPracowniczej &&
@@ -113,7 +110,7 @@ namespace MVCWinFormsMasterDetailTests
         public void PracownikTestKopii()
         {
             Pracownik pracownik = new Pracownik(2,"Kowalski","Tadeusz");
-            var kopia = pracownik.DeepCopy();
+            var kopia = pracownik.Clone();
             bool same = ReferenceEquals(pracownik, kopia);
             Assert.IsTrue(same);
         }
