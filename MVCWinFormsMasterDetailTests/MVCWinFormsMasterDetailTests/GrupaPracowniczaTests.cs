@@ -79,12 +79,13 @@ namespace MVCWinFormsMasterDetailTests
         public void EdytujGrupaPracowniczaOrazAnuluj()
         {
             string newName = "Nowak-Kowalski Adam";
+            string oldName = "Nowak Adam";
             string changedId = "2";
 
             FrmGrupyPracownicze view = new FrmGrupyPracownicze();
             var grupyPracownicze = new List<GrupaPracownicza>();
             grupyPracownicze.Add(new GrupaPracownicza(1, "Nowak Piotr"));
-            grupyPracownicze.Add(new GrupaPracownicza(2, "Nowak Adam"));
+            grupyPracownicze.Add(new GrupaPracownicza(2, oldName));
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
 
             controller.SelectedGrupaPracowniczaChanged(changedId);
@@ -95,7 +96,7 @@ namespace MVCWinFormsMasterDetailTests
 
             var grupaPracownicza = grupyPracownicze.SingleOrDefault(w => w.IdGrupyPracowniczej.ToString() == changedId);
 
-            Assert.IsTrue(grupaPracownicza.NazwaGrupyPracowniczej == newName);
+            Assert.IsTrue(grupaPracownicza.NazwaGrupyPracowniczej == oldName);
         }
         [TestMethod]
         public void UsunGrupaPracownicza()
@@ -114,7 +115,6 @@ namespace MVCWinFormsMasterDetailTests
             Assert.IsTrue(grupyPracownicze.Count == 2);
 
         }
-
         [TestMethod]
         public void EdytujGrupaPracowniczaDodajPracownika()
         {
