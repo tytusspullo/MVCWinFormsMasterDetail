@@ -26,6 +26,10 @@ namespace MVCWinFormsMasterDetail
         {
             get { return _pracownicy; }
         }
+        /// <summary>
+        /// Creates deep copy.
+        /// </summary>
+        /// <returns></returns>
         public object Clone()
         {
             var other = new GrupaPracownicza(IdGrupyPracowniczej, NazwaGrupyPracowniczej);

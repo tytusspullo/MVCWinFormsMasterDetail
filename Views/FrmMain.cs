@@ -23,22 +23,28 @@ namespace MVCWinFormsMasterDetail
         {
             List<GrupaPracownicza> grupyPracownicze = new List<GrupaPracownicza>();
 
-            GrupaPracownicza grupa = new GrupaPracownicza();
+            var grupa = new GrupaPracownicza();
             grupa.IdGrupyPracowniczej = 1;
             grupa.NazwaGrupyPracowniczej = "Apteka";
             grupa.Pracownicy.Add(new Pracownik(11, "Nowak", "Jan"));
             grupa.Pracownicy.Add(new Pracownik(12, "Kowalski", "Piotr"));
             grupyPracownicze.Add(grupa);
 
-            GrupaPracownicza grupa2 = new GrupaPracownicza();
+            var grupa2 = new GrupaPracownicza();
             grupa2.IdGrupyPracowniczej = 2;
             grupa2.NazwaGrupyPracowniczej = "Odzial Chemioterapi";
             grupa2.Pracownicy.Add(new Pracownik(13, "Orzel", "Ryszard"));
             grupa2.Pracownicy.Add(new Pracownik(14, "Nowakowski", "Karol"));
             grupyPracownicze.Add(grupa2);
 
-            FrmGrupyPracownicze view = new FrmGrupyPracownicze();
-            GrupyPracowniczeController controller = new GrupyPracowniczeController(view, grupyPracownicze);
+            var grupa3 = new GrupaPracownicza();
+            grupa3.IdGrupyPracowniczej = 3;
+            grupa3.NazwaGrupyPracowniczej = "Odzial Ratunkowy";
+            grupa3.Pracownicy.Add(new Pracownik(15, "Kowalski", "Jan"));
+            grupyPracownicze.Add(grupa3);
+
+            var view = new FrmGrupyPracownicze();
+            var controller = new GrupyPracowniczeController(view, grupyPracownicze);
             controller.LoadView();
             view.Show();
         }

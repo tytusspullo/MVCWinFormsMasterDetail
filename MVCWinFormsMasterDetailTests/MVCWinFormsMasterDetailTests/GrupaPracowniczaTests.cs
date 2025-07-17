@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using MVCWinFormsMasterDetail;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace MVCWinFormsMasterDetailTests
 {
@@ -19,6 +20,7 @@ namespace MVCWinFormsMasterDetailTests
             controller.AddGrupaPracownicza();
             controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Nowak";
+            controller.UpdateViewDetailValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
 
             Assert.IsTrue((grupyPracownicze.Count == 1) && grupyPracownicze[0].IdGrupyPracowniczej != 0);
@@ -45,10 +47,12 @@ namespace MVCWinFormsMasterDetailTests
             controller.AddGrupaPracownicza();
             controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Nowak";
+            controller.UpdateViewDetailValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
             controller.AddGrupaPracownicza();
             controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 3;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Kowalski";
+            controller.UpdateViewDetailValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
 
             Assert.IsTrue((grupyPracownicze.Count == 2));
@@ -111,9 +115,7 @@ namespace MVCWinFormsMasterDetailTests
             controller.SelectedGrupaPracowniczaChanged("2");
             controller.RemoveGrupaPracownicza();
 
-
             Assert.IsTrue(grupyPracownicze.Count == 2);
-
         }
         [TestMethod]
         public void EdytujGrupaPracowniczaDodajPracownika()
@@ -133,7 +135,21 @@ namespace MVCWinFormsMasterDetailTests
             controller.SaveEditPracownik();
             Assert.IsTrue(grupyPracownicze[1].Pracownicy.Count == 1);
         }
-
+        [TestMethod]
+        public void GrupaPracowniczaDodajPracownika()
+        {
+            var view = new FrmGrupyPracownicze();
+            var grupyPracownicze = new List<GrupaPracownicza>();
+            var grupaPracownicza = new GrupaPracownicza();
+            grupaPracownicza.IdGrupyPracowniczej = 10;
+            grupaPracownicza.NazwaGrupyPracowniczej = "Apteka";
+            grupyPracownicze.Add(grupaPracownicza);
+            var controller = new GrupyPracowniczeController(view, grupyPracownicze);
+            controller.SelectedGrupaPracowniczaChanged("10");
+            controller.EditGrupaPracownicza();
+            controller.AddPracownik();
+            //controller.EditedPracownik
+        }
 
         [TestMethod]
         public void GrupaPracowniczaTestKopii()
