@@ -130,16 +130,13 @@ namespace MVCWinFormsMasterDetail
                     {
                         foreach (Pracownik pracownik in _editedGrupaPracownicza.Pracownicy)
                         {
-                            _selectedPracownik = _editedGrupaPracownicza.Pracownicy[0];
-                            _editedPracownik = (Pracownik)_editedGrupaPracownicza.Pracownicy[0].Clone();
-                            if (pracownik.IdPracownika == Convert.ToInt32(_editedPracownik.IdPracownika))
-                            {
-                                _view.AddToGrid(_editedPracownik);
-                                UpdateViewDetailValues(_editedPracownik);
-                                _view.SetSelectedInGrid(_editedPracownik);
-                                break;
-                            }
+                            _view.AddToGrid(pracownik);
                         }
+                        //zaznacz pracownika
+                        _selectedPracownik = _editedGrupaPracownicza.Pracownicy[0];
+                        _editedPracownik = (Pracownik)_editedGrupaPracownicza.Pracownicy[0].Clone();
+                        UpdateViewDetailValues(_editedPracownik);
+                        _view.SetSelectedInGrid(_editedPracownik);
                     }
                     break;
                 }
@@ -191,7 +188,7 @@ namespace MVCWinFormsMasterDetail
                 if (pracownik.IdPracownika == Convert.ToInt32(selectedPracownikId))
                 {
                     _selectedPracownik = pracownik;
-                    EditedPracownik = (Pracownik)_selectedPracownik.Clone();
+                    _editedPracownik = (Pracownik)_selectedPracownik.Clone();
                     UpdateViewDetailValues(EditedPracownik);
                     _view.SetSelectedInGrid(EditedPracownik);
                     break;

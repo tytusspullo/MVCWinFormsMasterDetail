@@ -150,7 +150,6 @@ namespace MVCWinFormsMasterDetailTests
             controller.AddPracownik();
             //controller.EditedPracownik
         }
-
         [TestMethod]
         public void GrupaPracowniczaTestKopii()
         {
@@ -174,7 +173,6 @@ namespace MVCWinFormsMasterDetailTests
                             kopia.Pracownicy.Count == grupa.Pracownicy.Count
                 );
         }
-
         [TestMethod]
         public void PracownikTestKopii()
         {
