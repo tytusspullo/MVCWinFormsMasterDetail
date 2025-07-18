@@ -126,6 +126,7 @@ namespace MVCWinFormsMasterDetail
         }
         public void SetSelectedInGrid(GrupaPracownicza grupaPracownicza)
         {
+            //lvGrupyPracownicze.SelectedItems.Clear();
             foreach (ListViewItem row in this.lvGrupyPracownicze.Items)
             {
                 if (row.Text == grupaPracownicza.IdGrupyPracowniczej.ToString())
@@ -220,7 +221,7 @@ namespace MVCWinFormsMasterDetail
         }
         public void HideEditGroupBoxPracownicy()
         {
-            pnEditPracownik.Visible = true;//= false;
+            pnEditPracownik.Visible = false;
         }
         #endregion 
 

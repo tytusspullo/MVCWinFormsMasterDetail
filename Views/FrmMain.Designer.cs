@@ -57,14 +57,14 @@
             // grupyPracowniczeToolStripMenuItem
             // 
             this.grupyPracowniczeToolStripMenuItem.Name = "grupyPracowniczeToolStripMenuItem";
-            this.grupyPracowniczeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.grupyPracowniczeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.grupyPracowniczeToolStripMenuItem.Text = "Grupy Pracownicze";
             this.grupyPracowniczeToolStripMenuItem.Click += new System.EventHandler(this.grupyPracowniczeToolStripMenuItem_Click);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
@@ -76,7 +76,9 @@
             this.Controls.Add(this.mnuStrip);
             this.MainMenuStrip = this.mnuStrip;
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupy Pracownicze";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mnuStrip.ResumeLayout(false);
             this.mnuStrip.PerformLayout();
             this.ResumeLayout(false);
