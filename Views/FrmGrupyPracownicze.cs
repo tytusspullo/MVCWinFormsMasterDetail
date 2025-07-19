@@ -36,11 +36,10 @@ namespace MVCWinFormsMasterDetail
             get { return _state; }
             set { _state = value; }
         }
-        public void UpdateState()
+        public void UpdateStatusBarState()
         {
             this.Text = _state.ToString();
         }
-        
         public int GrupaPracowniczaID 
         {
             get { return Convert.ToInt32(tbIDGrupaPracownicza.Text); }
@@ -224,6 +223,22 @@ namespace MVCWinFormsMasterDetail
             pnEditPracownik.Visible = false;
         }
         #endregion 
+        public GroupBox GroupBoxGrupaPracowniczaEditButtons()
+        { 
+            return this.gbGrupaPracowniczaEditButtons;
+        }
+        public Panel PanelPracownikEditButtons()
+        {
+            return this.pnPracownikEditButtons;
+        }
+        public Panel PanelGrupaPracowniczaSaveButtons()
+        {
+            return this.pnGrupaPracowniczaSaveButtons;
+        }
+        public Panel PanelPracownikSaveButtons()
+        {
+            return this.pnPracownikSaveButtons;
+        }
 
         #region EventsDelagatedToController
         private void btnAddGrupaPracownicza_Click(object sender, EventArgs e)

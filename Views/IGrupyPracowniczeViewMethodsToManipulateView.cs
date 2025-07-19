@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MVCWinFormsMasterDetail
 {
@@ -12,7 +13,7 @@ namespace MVCWinFormsMasterDetail
         
         //State - Design Patern
         GrupaPracowniczaState State { get; set; }
-        void UpdateState();
+        void UpdateStatusBarState();
 
         //Methods to manipulate Master
         void ClearGridGrupyPracownize();
@@ -38,6 +39,12 @@ namespace MVCWinFormsMasterDetail
         string PracownikImie { get; set; }
         void ShowEditGroupBoxPracownicy();
         void HideEditGroupBoxPracownicy();
+
+        //Methods to manipulate look
+        GroupBox GroupBoxGrupaPracowniczaEditButtons();
+        Panel PanelPracownikEditButtons();
+        Panel PanelGrupaPracowniczaSaveButtons();
+        Panel PanelPracownikSaveButtons();
 
     }
 }
