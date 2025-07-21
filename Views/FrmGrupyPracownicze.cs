@@ -23,7 +23,8 @@ namespace MVCWinFormsMasterDetail
         {
             _state = new PrzegladanieGrupaPracowniczaState(this);
             InitializeComponent();
-        } 
+            btnEditGrupaPracownicza.Enabled = false;
+        }
 
         #region IGrupyPracowniczeView_MethodsNeededToManipulateView
         public void SetController(GrupyPracowniczeController controller)
@@ -255,8 +256,11 @@ namespace MVCWinFormsMasterDetail
         }
         private void lvGrupyPracownicze_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.lvGrupyPracownicze.SelectedItems.Count > 0)
-                this._controller.SelectedGrupaPracowniczaChanged(this.lvGrupyPracownicze.SelectedItems[0].Text);
+            btnEditGrupaPracownicza.Enabled = lvGrupyPracownicze.SelectedItems.Count > 0;
+            if (lvGrupyPracownicze.SelectedItems.Count > 0)
+            {
+                _controller.SelectedGrupaPracowniczaChanged(lvGrupyPracownicze.SelectedItems[0].Text);
+            }
         }
         private void btnSaveGrupaPracownicza_Click(object sender, EventArgs e)
         {
