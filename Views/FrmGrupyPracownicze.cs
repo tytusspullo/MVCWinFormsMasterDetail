@@ -41,10 +41,20 @@ namespace MVCWinFormsMasterDetail
         {
             this.Text = _state.ToString();
         }
-        public int GrupaPracowniczaID 
+        public int GrupaPracowniczaID
         {
-            get { return Convert.ToInt32(tbIDGrupaPracownicza.Text); }
-            set { tbIDGrupaPracownicza.Text = value.ToString(); } 
+            get
+            {
+                if (int.TryParse(tbIDGrupaPracownicza.Text, out int result))
+                {
+                    return result;
+                }
+                return 0;
+            }
+            set
+            {
+                tbIDGrupaPracownicza.Text = value.ToString();
+            }
         }
         public string GrupaPracowniczaNazwa
         {
@@ -126,12 +136,20 @@ namespace MVCWinFormsMasterDetail
         }
         public void SetSelectedInGrid(GrupaPracownicza grupaPracownicza)
         {
-            //lvGrupyPracownicze.SelectedItems.Clear();
-            foreach (ListViewItem row in this.lvGrupyPracownicze.Items)
+            if (lvGrupyPracownicze.SelectedItems.Count == 1 &&
+                lvGrupyPracownicze.SelectedItems[0].Text == grupaPracownicza.IdGrupyPracowniczej.ToString())
+            {
+                return; // No change needed
+            }
+
+            lvGrupyPracownicze.SelectedItems.Clear();
+            foreach (ListViewItem row in lvGrupyPracownicze.Items)
             {
                 if (row.Text == grupaPracownicza.IdGrupyPracowniczej.ToString())
                 {
                     row.Selected = true;
+                    row.Focused = true;
+                    break;
                 }
             }
         }
@@ -207,11 +225,20 @@ namespace MVCWinFormsMasterDetail
         }
         public void SetSelectedInGrid(Pracownik pracownik)
         {
-            foreach (ListViewItem row in this.lvPracownicy.Items)
+            if (lvPracownicy.SelectedItems.Count == 1 &&
+                lvPracownicy.SelectedItems[0].Text == pracownik.IdPracownika.ToString())
+            {
+                return; 
+            }
+
+            lvPracownicy.SelectedItems.Clear(); 
+            foreach (ListViewItem row in lvPracownicy.Items)
             {
                 if (row.Text == pracownik.IdPracownika.ToString())
                 {
                     row.Selected = true;
+                    row.Focused = true;
+                    break;
                 }
             }
         }
