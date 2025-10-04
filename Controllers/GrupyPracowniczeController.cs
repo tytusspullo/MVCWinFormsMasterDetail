@@ -240,7 +240,7 @@ namespace MVCWinFormsMasterDetail
                 }
             }
 
-            _view.SetSelectedInGrid(_seletedGrupaPracownicza);
+            _view.SetSelectedInGrid(_editedGrupaPracownicza); 
             _view.State.SaveGrupaPracowniczaClick();
             UpdateViewLookToItsState();
         }

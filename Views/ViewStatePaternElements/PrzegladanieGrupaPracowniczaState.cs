@@ -21,7 +21,6 @@ namespace MVCWinFormsMasterDetail
         {
             _frm.State = new EdycjaGrupaPracowniczaState(_frm);
         }
-
         public override string ToString()
         {
             return "PrzegladanieGrupaPracowniczaState";

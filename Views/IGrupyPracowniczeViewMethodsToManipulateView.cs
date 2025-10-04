@@ -45,6 +45,5 @@ namespace MVCWinFormsMasterDetail
         Panel PanelPracownikEditButtons();
         Panel PanelGrupaPracowniczaSaveButtons();
         Panel PanelPracownikSaveButtons();
-
     }
 }
