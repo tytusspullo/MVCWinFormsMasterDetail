@@ -15,8 +15,10 @@ namespace MVCWinFormsMasterDetail
         GrupaPracowniczaState State { get; set; }
         void UpdateStatusBarState();
 
+        
+
         //Methods to manipulate Master
-        void ClearGridGrupyPracownize();
+        void ClearGridGrupyPracownicze();
         void AddToGrid(GrupaPracownicza grupaPracownicza);
         void UpdateGrid(GrupaPracownicza grupaPracownicza);
         void RemoveFromGrid(GrupaPracownicza grupaPracownicza);
@@ -40,10 +42,5 @@ namespace MVCWinFormsMasterDetail
         void ShowEditGroupBoxPracownicy();
         void HideEditGroupBoxPracownicy();
 
-        //Methods to manipulate look
-        GroupBox GroupBoxGrupaPracowniczaEditButtons();
-        Panel PanelPracownikEditButtons();
-        Panel PanelGrupaPracowniczaSaveButtons();
-        Panel PanelPracownikSaveButtons();
     }
 }

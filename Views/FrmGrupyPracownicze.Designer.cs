@@ -100,6 +100,7 @@
             // 
             // btnAddGrupaPracownicza
             // 
+            this.btnAddGrupaPracownicza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddGrupaPracownicza.Location = new System.Drawing.Point(12, 15);
             this.btnAddGrupaPracownicza.Name = "btnAddGrupaPracownicza";
             this.btnAddGrupaPracownicza.Size = new System.Drawing.Size(120, 30);

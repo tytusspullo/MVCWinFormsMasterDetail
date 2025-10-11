@@ -8,7 +8,7 @@ namespace MVCWinFormsMasterDetail
 {
     public class PrzegladanieGrupaPracowniczaState:GrupaPracowniczaState
     {
-        public PrzegladanieGrupaPracowniczaState(IGrupyPracowniczeViewMethodsToManipulateView frm) :base(frm)
+        public PrzegladanieGrupaPracowniczaState(FrmGrupyPracownicze frm) :base(frm)
         {
              
         }
@@ -16,10 +16,12 @@ namespace MVCWinFormsMasterDetail
         public override void AddGrupaPracowniczaClick()
         {
             _frm.State = new EdycjaGrupaPracowniczaState(_frm);
+            _frm.UpdateViewLookToItsState();
         }
         public override void EditGrupaPracowniczaClick()
         {
             _frm.State = new EdycjaGrupaPracowniczaState(_frm);
+            _frm.UpdateViewLookToItsState();
         }
         public override string ToString()
         {

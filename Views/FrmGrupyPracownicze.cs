@@ -17,19 +17,13 @@ namespace MVCWinFormsMasterDetail
     public partial class FrmGrupyPracownicze : Form, IGrupyPracowniczeViewMethodsToManipulateView
     {
         GrupyPracowniczeController _controller = null;
-        public GrupaPracowniczaState _state = null;
+        GrupaPracowniczaState _state = null;
 
         public FrmGrupyPracownicze()
         {
             _state = new PrzegladanieGrupaPracowniczaState(this);
             InitializeComponent();
             btnEditGrupaPracownicza.Enabled = false;
-        }
-
-        #region IGrupyPracowniczeView_MethodsNeededToManipulateView
-        public void SetController(GrupyPracowniczeController controller)
-        {
-            _controller = controller;
         }
 
         public GrupaPracowniczaState State
@@ -40,6 +34,67 @@ namespace MVCWinFormsMasterDetail
         public void UpdateStatusBarState()
         {
             this.Text = _state.ToString();
+        }
+        public void UpdateViewLookToItsState()
+        {
+            switch (_state)
+            {
+                case PrzegladanieGrupaPracowniczaState przegladanieGrupaPracowniczaState:
+                    HideEditGroupBoxGrupaPracownicza();
+                    HideEditGroupBoxPracownicy();
+                    //update buttons
+                    GroupBoxGrupaPracowniczaEditButtons().Enabled = true;
+                    PanelGrupaPracowniczaSaveButtons().Enabled = false;
+                    PanelPracownikEditButtons().Enabled = false;
+                    PanelPracownikSaveButtons().Enabled = false;
+                    UpdateStatusBarState();
+                    break;
+                case EdycjaGrupaPracowniczaState edycjaGrupaPracowniczaState:
+                    ShowEditGroupBoxGrupaPracownicza();
+                    HideEditGroupBoxPracownicy();
+                    //update buttons
+                    GroupBoxGrupaPracowniczaEditButtons().Enabled = false;
+                    PanelGrupaPracowniczaSaveButtons().Enabled = true;
+                    PanelPracownikEditButtons().Enabled = true;
+                    PanelPracownikSaveButtons().Enabled = false;
+                    UpdateStatusBarState();
+                    break;
+                case EdycjaPracownikState edycjaPracownikState:
+                    ShowEditGroupBoxGrupaPracownicza();
+                    ShowEditGroupBoxPracownicy();
+                    //update buttons
+                    GroupBoxGrupaPracowniczaEditButtons().Enabled = false;
+                    PanelGrupaPracowniczaSaveButtons().Enabled = false;
+                    PanelPracownikEditButtons().Enabled = false;
+                    PanelPracownikSaveButtons().Enabled = true;
+                    UpdateStatusBarState();
+                    break;
+                default:
+                    break;
+            }
+        }
+        private GroupBox GroupBoxGrupaPracowniczaEditButtons()
+        {
+            return this.gbGrupaPracowniczaEditButtons;
+        }
+        private Panel PanelPracownikEditButtons()
+        {
+            return this.pnPracownikEditButtons;
+        }
+        private Panel PanelGrupaPracowniczaSaveButtons()
+        {
+            return this.pnGrupaPracowniczaSaveButtons;
+        }
+        private Panel PanelPracownikSaveButtons()
+        {
+            return this.pnPracownikSaveButtons;
+        }
+
+
+        #region IGrupyPracowniczeView_MethodsNeededToManipulateView
+        public void SetController(GrupyPracowniczeController controller)
+        {
+            _controller = controller;
         }
         public int GrupaPracowniczaID
         {
@@ -61,7 +116,6 @@ namespace MVCWinFormsMasterDetail
             get { return tbNazwaGrupaPracownicza.Text; }
             set { tbNazwaGrupaPracownicza.Text = value; }
         }
-
         public int PracownikID 
         {
             get { return Convert.ToInt32(tbIDPracownika.Text); }
@@ -78,7 +132,7 @@ namespace MVCWinFormsMasterDetail
             set { tbImie.Text = value.ToString(); }
         }
 
-        public void ClearGridGrupyPracownize()
+        public void ClearGridGrupyPracownicze()
         {
             this.lvGrupyPracownicze.Columns.Clear();
             this.lvGrupyPracownicze.Columns.Add("Id", 150, HorizontalAlignment.Left);
@@ -165,7 +219,6 @@ namespace MVCWinFormsMasterDetail
             gbEdit.Dock = DockStyle.Top;
             lvGrupyPracownicze.Visible = true;
         }
-
          
         public void ClearGridPracownicy()
         {
@@ -251,23 +304,7 @@ namespace MVCWinFormsMasterDetail
             pnEditPracownik.Visible = false;
         }
         #endregion 
-        public GroupBox GroupBoxGrupaPracowniczaEditButtons()
-        { 
-            return this.gbGrupaPracowniczaEditButtons;
-        }
-        public Panel PanelPracownikEditButtons()
-        {
-            return this.pnPracownikEditButtons;
-        }
-        public Panel PanelGrupaPracowniczaSaveButtons()
-        {
-            return this.pnGrupaPracowniczaSaveButtons;
-        }
-        public Panel PanelPracownikSaveButtons()
-        {
-            return this.pnPracownikSaveButtons;
-        }
-
+        
         #region EventsDelagatedToController
         private void btnAddGrupaPracownicza_Click(object sender, EventArgs e)
         {

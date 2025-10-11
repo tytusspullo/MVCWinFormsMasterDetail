@@ -26,7 +26,7 @@ namespace MVCWinFormsMasterDetail
         //for start load of lists
         public void LoadView()
         {
-            _view.ClearGridGrupyPracownize();
+            _view.ClearGridGrupyPracownicze();
             if (_grupyPracownicze.Count > 0)
             {
                 foreach (GrupaPracownicza grupaPracownicza in _grupyPracownicze)
@@ -79,44 +79,6 @@ namespace MVCWinFormsMasterDetail
             pracownik.Nazwisko = _view.PracownikNazwisko;
             pracownik.Imie = _view.PracownikImie;
         }
-        private void UpdateViewLookToItsState()
-        {
-            switch (_view.State)
-            {
-                case PrzegladanieGrupaPracowniczaState przegladanieGrupaPracowniczaState:
-                    _view.HideEditGroupBoxGrupaPracownicza(); 
-                    _view.HideEditGroupBoxPracownicy();
-                    //update buttons
-                    _view.GroupBoxGrupaPracowniczaEditButtons().Enabled = true;
-                    _view.PanelGrupaPracowniczaSaveButtons().Enabled = false;
-                    _view.PanelPracownikEditButtons().Enabled = false;
-                    _view.PanelPracownikSaveButtons().Enabled = false;
-                    _view.UpdateStatusBarState();
-                    break;
-                case EdycjaGrupaPracowniczaState edycjaGrupaPracowniczaState:
-                    _view.ShowEditGroupBoxGrupaPracownicza();
-                    _view.HideEditGroupBoxPracownicy();
-                    //update buttons
-                    _view.GroupBoxGrupaPracowniczaEditButtons().Enabled = false;
-                    _view.PanelGrupaPracowniczaSaveButtons().Enabled = true;
-                    _view.PanelPracownikEditButtons().Enabled = true;
-                    _view.PanelPracownikSaveButtons().Enabled = false;
-                    _view.UpdateStatusBarState();
-                    break;
-                case EdycjaPracownikState edycjaPracownikState:
-                    _view.ShowEditGroupBoxGrupaPracownicza();
-                    _view.ShowEditGroupBoxPracownicy();
-                    //update buttons
-                    _view.GroupBoxGrupaPracowniczaEditButtons().Enabled = false;
-                    _view.PanelGrupaPracowniczaSaveButtons().Enabled = false;
-                    _view.PanelPracownikEditButtons().Enabled = false;
-                    _view.PanelPracownikSaveButtons().Enabled = true;
-                    _view.UpdateStatusBarState();
-                    break;
-                default:
-                    break;
-            }
-        }
 
         #region EventsDelegatedFromView
         public void AddGrupaPracownicza()
@@ -124,9 +86,8 @@ namespace MVCWinFormsMasterDetail
             _seletedGrupaPracownicza = new GrupaPracownicza(0, "");
             _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
             this.UpdateViewDetailValues(_editedGrupaPracownicza);
-            //manage state
+         
             _view.State.AddGrupaPracowniczaClick();
-            UpdateViewLookToItsState();
         }
         public void EditGrupaPracownicza()
         {
@@ -144,7 +105,6 @@ namespace MVCWinFormsMasterDetail
                 _view.SetSelectedInGrid(_editedPracownik);
             }
             _view.State.EditGrupaPracowniczaClick();
-            UpdateViewLookToItsState();
         }
         public void RemoveGrupaPracownicza()
         {
@@ -242,7 +202,7 @@ namespace MVCWinFormsMasterDetail
 
             _view.SetSelectedInGrid(_editedGrupaPracownicza); 
             _view.State.SaveGrupaPracowniczaClick();
-            UpdateViewLookToItsState();
+            //UpdateViewLookToItsState();
         }
         public void CancelGrupaPracownicza()
         {
@@ -254,7 +214,7 @@ namespace MVCWinFormsMasterDetail
             UpdateViewDetailValues(_editedGrupaPracownicza);
 
             _view.State.CancelGrupaPracowniczaClick();
-            UpdateViewLookToItsState();
+            //UpdateViewLookToItsState();
         }
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
@@ -278,13 +238,12 @@ namespace MVCWinFormsMasterDetail
             this.UpdateViewDetailValues(_editedPracownik);
             
             _view.State.AddPracownikClick();
-            UpdateViewLookToItsState();
+            //UpdateViewLookToItsState();
         }
         public void EditPracownik()
         {
             this.UpdateViewDetailValues(_editedPracownik);
             _view.State.EditPracownikClick();
-            UpdateViewLookToItsState();
         }
         public void RemovePracownik()
         { 
@@ -296,17 +255,22 @@ namespace MVCWinFormsMasterDetail
             UpdatePracownikWithViewValues(_editedPracownik);
             if (!this._seletedGrupaPracownicza.Pracownicy.Contains(_selectedPracownik))
             {
-                this._seletedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
+                this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
                 this._view.AddToGrid(_editedPracownik);
             }
             else
             {
-                this._view.UpdateGrid(_editedPracownik);
+                int idx = _editedGrupaPracownicza.Pracownicy.IndexOf(
+                        _editedGrupaPracownicza.Pracownicy.FirstOrDefault(p => p.IdPracownika == _selectedPracownik.IdPracownika)
+                                                                    );
+                if (idx != -1)
+                {
+                    _editedGrupaPracownicza.Pracownicy[idx] = _editedPracownik;
+                    this._view.UpdateGrid(_editedPracownik);
+                }
             }
             _view.SetSelectedInGrid(_editedPracownik);
-
             _view.State.SavePracownikClick();
-            UpdateViewLookToItsState();
         }
         public void CancelEditPracownik()
         {
@@ -314,7 +278,6 @@ namespace MVCWinFormsMasterDetail
             _editedPracownik = (Pracownik)_selectedPracownik.Clone();
             //UpdateViewDetailValues(_editedPracownik);
             _view.State.CancelPracownikClick();
-            UpdateViewLookToItsState();
         }
         #endregion
 
