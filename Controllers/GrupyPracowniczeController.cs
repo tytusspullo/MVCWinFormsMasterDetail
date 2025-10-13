@@ -9,12 +9,12 @@ namespace MVCWinFormsMasterDetail
 {
     public class GrupyPracowniczeController
     {
-        List<GrupaPracownicza> _grupyPracownicze = new List<GrupaPracownicza>();  //model
-        IGrupyPracowniczeViewMethodsToManipulateView _view = null;  //view reference
-        GrupaPracownicza _seletedGrupaPracownicza = null;           //for searching purpouses
-        GrupaPracownicza _editedGrupaPracownicza = null;            //for editing operation and SAVE or REJECT changes, deep copy of selected item
-        Pracownik _selectedPracownik = null;                        //for searching purpouses
-        Pracownik _editedPracownik = null;                          //for editing operation and SAVE or REJECT changes, deep copy of selected item
+        List<GrupaPracownicza> _grupyPracownicze = new List<GrupaPracownicza>();    //model
+        IGrupyPracowniczeViewMethodsToManipulateView _view = null;                  //view reference
+        GrupaPracownicza _seletedGrupaPracownicza = null;                           //for searching purpouses
+        GrupaPracownicza _editedGrupaPracownicza = null;                            //for editing operation and SAVE or REJECT changes, deep copy of selected item
+        Pracownik _selectedPracownik = null;                                        //for searching purpouses
+        Pracownik _editedPracownik = null;                                          //for editing operation and SAVE or REJECT changes, deep copy of selected item
 
         public GrupyPracowniczeController(IGrupyPracowniczeViewMethodsToManipulateView view, List<GrupaPracownicza> grupyPracownicze)
         {
@@ -253,7 +253,7 @@ namespace MVCWinFormsMasterDetail
         public void SaveEditPracownik() 
         {
             UpdatePracownikWithViewValues(_editedPracownik);
-            if (!this._seletedGrupaPracownicza.Pracownicy.Contains(_selectedPracownik))
+            if (!this._editedGrupaPracownicza.Pracownicy.Contains(_selectedPracownik))
             {
                 this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
                 this._view.AddToGrid(_editedPracownik);
