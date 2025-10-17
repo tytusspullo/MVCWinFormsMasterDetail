@@ -11,7 +11,7 @@ namespace MVCWinFormsMasterDetail
     {
         List<GrupaPracownicza> _grupyPracownicze = new List<GrupaPracownicza>();    //model
         IGrupyPracowniczeViewMethodsToManipulateView _view = null;                  //view reference
-        GrupaPracownicza _seletedGrupaPracownicza = null;                           //for searching purpouses
+        GrupaPracownicza _seletedGrupaPracownicza = null;                           //for searching purpouses, pointeron orginal list / model
         GrupaPracownicza _editedGrupaPracownicza = null;                            //for editing operation and SAVE or REJECT changes, deep copy of selected item
         Pracownik _selectedPracownik = null;                                        //for searching purpouses
         Pracownik _editedPracownik = null;                                          //for editing operation and SAVE or REJECT changes, deep copy of selected item
@@ -109,19 +109,10 @@ namespace MVCWinFormsMasterDetail
         public void RemoveGrupaPracownicza()
         {
             int id = _seletedGrupaPracownicza.IdGrupyPracowniczej;
-            GrupaPracownicza grupaPracowniczaToRemove = null;
 
             if (id != 0)
             {
-                foreach (GrupaPracownicza grupaPracownicza in this._grupyPracownicze)
-                {
-                    if (grupaPracownicza.IdGrupyPracowniczej == id)
-                    {
-                        grupaPracowniczaToRemove = grupaPracownicza;
-                        break;
-                    }
-                }
-
+                var grupaPracowniczaToRemove = _grupyPracownicze.SingleOrDefault(g => g.IdGrupyPracowniczej == id);
                 if (grupaPracowniczaToRemove != null)
                 {
                     int newSelectedIndex = this._grupyPracownicze.IndexOf(grupaPracowniczaToRemove);
@@ -130,7 +121,13 @@ namespace MVCWinFormsMasterDetail
 
                     if (newSelectedIndex > -1 && newSelectedIndex < _grupyPracownicze.Count)
                     {
-                        this._view.SetSelectedInGrid((GrupaPracownicza)_grupyPracownicze[newSelectedIndex]);
+                        this._view.SetSelectedInGrid((GrupaPracownicza)_grupyPracownicze[newSelectedIndex]);//
+                        //ustaw edytowana grupe pracownicza jezeli wiecej niz 0
+                        if (_grupyPracownicze.Count > 0)
+                        { 
+                            
+                        }
+                        
                     }
                 }
             }
@@ -246,9 +243,24 @@ namespace MVCWinFormsMasterDetail
             _view.State.EditPracownikClick();
         }
         public void RemovePracownik()
-        { 
+        {
             //Do not change view state
-            //operations for List Pracownicy
+            int id = _selectedPracownik.IdPracownika;
+            if (id != 0)
+            {
+                var pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == id);
+                if (pracownikToRemove != null)
+                {
+                    int newSelectedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
+                    _editedGrupaPracownicza.Pracownicy.Remove(pracownikToRemove);
+                    _view.RemoveFromGrid(pracownikToRemove);
+                    if (newSelectedIndex > -1 && newSelectedIndex < _editedGrupaPracownicza.Pracownicy.Count)
+                    {
+                        _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[newSelectedIndex]);
+                    }
+                }
+            }
+
         }
         public void SaveEditPracownik() 
         {
