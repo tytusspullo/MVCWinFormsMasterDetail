@@ -59,25 +59,48 @@ namespace MVCWinFormsMasterDetail
         }
         public void UpdateViewDetailValues(GrupaPracownicza grupaPracownicza)
         {
-            _view.GrupaPracowniczaID = grupaPracownicza.IdGrupyPracowniczej;
-            _view.GrupaPracowniczaNazwa = grupaPracownicza.NazwaGrupyPracowniczej;
+            if (grupaPracownicza != null)
+            {
+                _view.GrupaPracowniczaID = grupaPracownicza.IdGrupyPracowniczej;
+                _view.GrupaPracowniczaNazwa = grupaPracownicza.NazwaGrupyPracowniczej;
+            }
+            else
+            {
+                _view.GrupaPracowniczaID = 0;
+                _view.GrupaPracowniczaNazwa = string.Empty;
+            }
         }
         private void UpdateViewDetailValues(Pracownik pracownik)
         {
-            _view.PracownikID = pracownik.IdPracownika;
-            _view.PracownikNazwisko = pracownik.Nazwisko;
-            _view.PracownikImie = pracownik.Imie;
+            if (pracownik != null)
+            {
+                _view.PracownikID = pracownik.IdPracownika;
+                _view.PracownikNazwisko = pracownik.Nazwisko;
+                _view.PracownikImie = pracownik.Imie;
+            }
+            else
+            {
+                _view.PracownikID = 0;
+                _view.PracownikNazwisko = string.Empty;
+                _view.PracownikImie = string.Empty;
+            }
         }
         private void UpdateGrupaPracowniczaWithViewValues(GrupaPracownicza grupaPracownicza)
         {
-            grupaPracownicza.IdGrupyPracowniczej = _view.GrupaPracowniczaID;
-            grupaPracownicza.NazwaGrupyPracowniczej = _view.GrupaPracowniczaNazwa;
+            if (grupaPracownicza != null)
+            {
+                grupaPracownicza.IdGrupyPracowniczej = _view.GrupaPracowniczaID;
+                grupaPracownicza.NazwaGrupyPracowniczej = _view.GrupaPracowniczaNazwa;
+            }
         }
         private void UpdatePracownikWithViewValues(Pracownik pracownik)
         {
-            pracownik.IdPracownika = _view.PracownikID;
-            pracownik.Nazwisko = _view.PracownikNazwisko;
-            pracownik.Imie = _view.PracownikImie;
+            if (pracownik != null)
+            {
+                pracownik.IdPracownika = _view.PracownikID;
+                pracownik.Nazwisko = _view.PracownikNazwisko;
+                pracownik.Imie = _view.PracownikImie;
+            }
         }
 
         #region EventsDelegatedFromView
@@ -91,24 +114,27 @@ namespace MVCWinFormsMasterDetail
         }
         public void EditGrupaPracownicza()
         {
-            UpdateViewDetailValues(_editedGrupaPracownicza);
-            _view.ClearGridPracownicy();
-            if (_editedGrupaPracownicza.Pracownicy.Count > 0)
+            if (_grupyPracownicze.Count > 0)
             {
-                foreach (Pracownik pracownik in _editedGrupaPracownicza.Pracownicy)
+                UpdateViewDetailValues(_editedGrupaPracownicza);
+                _view.ClearGridPracownicy();
+                if (_editedGrupaPracownicza.Pracownicy.Count > 0)
                 {
-                    _view.AddToGrid(pracownik);
+                    foreach (Pracownik pracownik in _editedGrupaPracownicza.Pracownicy)
+                    {
+                        _view.AddToGrid(pracownik);
+                    }
+                    _selectedPracownik = _editedGrupaPracownicza.Pracownicy[0];
+                    _editedPracownik = (Pracownik)_selectedPracownik.Clone();
+                    UpdateViewDetailValues(_editedPracownik);
+                    _view.SetSelectedInGrid(_editedPracownik);
                 }
-                _selectedPracownik = _editedGrupaPracownicza.Pracownicy[0];
-                _editedPracownik = (Pracownik)_selectedPracownik.Clone();
-                UpdateViewDetailValues(_editedPracownik);
-                _view.SetSelectedInGrid(_editedPracownik);
+                _view.State.EditGrupaPracowniczaClick();
             }
-            _view.State.EditGrupaPracowniczaClick();
         }
         public void RemoveGrupaPracownicza()
         {
-            int id = _seletedGrupaPracownicza.IdGrupyPracowniczej;
+            int id = _seletedGrupaPracownicza?.IdGrupyPracowniczej ?? 0;
 
             if (id != 0)
             {
@@ -239,13 +265,16 @@ namespace MVCWinFormsMasterDetail
         }
         public void EditPracownik()
         {
-            this.UpdateViewDetailValues(_editedPracownik);
-            _view.State.EditPracownikClick();
+            if (_editedGrupaPracownicza.Pracownicy.Count > 0)
+            {
+                this.UpdateViewDetailValues(_editedPracownik);
+                _view.State.EditPracownikClick();
+            }
         }
         public void RemovePracownik()
         {
             //Do not change view state
-            int id = _selectedPracownik.IdPracownika;
+            int id = _selectedPracownik?.IdPracownika ?? 0;
             if (id != 0)
             {
                 var pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == id);
@@ -254,9 +283,15 @@ namespace MVCWinFormsMasterDetail
                     int newSelectedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
                     _editedGrupaPracownicza.Pracownicy.Remove(pracownikToRemove);
                     _view.RemoveFromGrid(pracownikToRemove);
+
                     if (newSelectedIndex > -1 && newSelectedIndex < _editedGrupaPracownicza.Pracownicy.Count)
                     {
-                        _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[newSelectedIndex]);
+                        _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[newSelectedIndex]); //invoke Selection change
+                    }
+                    else
+                    {
+                        _selectedPracownik = null;
+                        _editedPracownik = null;
                     }
                 }
             }
