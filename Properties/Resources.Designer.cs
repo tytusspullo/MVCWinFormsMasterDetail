@@ -63,9 +63,19 @@ namespace MVCWinFormsMasterDetail.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add1 {
+        internal static System.Drawing.Bitmap Add {
             get {
-                object obj = ResourceManager.GetObject("Add1", resourceCulture);
+                object obj = ResourceManager.GetObject("Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddTransparent {
+            get {
+                object obj = ResourceManager.GetObject("AddTransparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

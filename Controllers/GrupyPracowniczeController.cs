@@ -308,8 +308,7 @@ namespace MVCWinFormsMasterDetail
             else
             {
                 int idx = _editedGrupaPracownicza.Pracownicy.IndexOf(
-                        _editedGrupaPracownicza.Pracownicy.FirstOrDefault(p => p.IdPracownika == _selectedPracownik.IdPracownika)
-                                                                    );
+                              _editedGrupaPracownicza.Pracownicy.FirstOrDefault(p => p.IdPracownika == _selectedPracownik.IdPracownika));
                 if (idx != -1)
                 {
                     _editedGrupaPracownicza.Pracownicy[idx] = _editedPracownik;

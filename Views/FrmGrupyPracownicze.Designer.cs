@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGrupyPracownicze));
             this.gbGrupaPracowniczaEditButtons = new System.Windows.Forms.GroupBox();
             this.btnRemoveGrupaPracownicza = new System.Windows.Forms.Button();
             this.btnEditGrupaPracownicza = new System.Windows.Forms.Button();
@@ -80,9 +81,11 @@
             // 
             // btnRemoveGrupaPracownicza
             // 
+            this.btnRemoveGrupaPracownicza.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveGrupaPracownicza.Image")));
+            this.btnRemoveGrupaPracownicza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoveGrupaPracownicza.Location = new System.Drawing.Point(264, 15);
             this.btnRemoveGrupaPracownicza.Name = "btnRemoveGrupaPracownicza";
-            this.btnRemoveGrupaPracownicza.Size = new System.Drawing.Size(120, 30);
+            this.btnRemoveGrupaPracownicza.Size = new System.Drawing.Size(120, 32);
             this.btnRemoveGrupaPracownicza.TabIndex = 2;
             this.btnRemoveGrupaPracownicza.Text = "Remove";
             this.btnRemoveGrupaPracownicza.UseVisualStyleBackColor = true;
@@ -90,9 +93,11 @@
             // 
             // btnEditGrupaPracownicza
             // 
+            this.btnEditGrupaPracownicza.Image = ((System.Drawing.Image)(resources.GetObject("btnEditGrupaPracownicza.Image")));
+            this.btnEditGrupaPracownicza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditGrupaPracownicza.Location = new System.Drawing.Point(138, 15);
             this.btnEditGrupaPracownicza.Name = "btnEditGrupaPracownicza";
-            this.btnEditGrupaPracownicza.Size = new System.Drawing.Size(120, 30);
+            this.btnEditGrupaPracownicza.Size = new System.Drawing.Size(120, 32);
             this.btnEditGrupaPracownicza.TabIndex = 1;
             this.btnEditGrupaPracownicza.Text = "Edit";
             this.btnEditGrupaPracownicza.UseVisualStyleBackColor = true;
@@ -100,10 +105,11 @@
             // 
             // btnAddGrupaPracownicza
             // 
+            this.btnAddGrupaPracownicza.Image = ((System.Drawing.Image)(resources.GetObject("btnAddGrupaPracownicza.Image")));
             this.btnAddGrupaPracownicza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddGrupaPracownicza.Location = new System.Drawing.Point(12, 15);
             this.btnAddGrupaPracownicza.Name = "btnAddGrupaPracownicza";
-            this.btnAddGrupaPracownicza.Size = new System.Drawing.Size(120, 30);
+            this.btnAddGrupaPracownicza.Size = new System.Drawing.Size(120, 32);
             this.btnAddGrupaPracownicza.TabIndex = 0;
             this.btnAddGrupaPracownicza.Text = "Add";
             this.btnAddGrupaPracownicza.UseVisualStyleBackColor = true;
@@ -135,7 +141,7 @@
             this.pnEditPracownik.Controls.Add(this.tbImie);
             this.pnEditPracownik.Controls.Add(this.lblImie);
             this.pnEditPracownik.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnEditPracownik.Location = new System.Drawing.Point(3, 146);
+            this.pnEditPracownik.Location = new System.Drawing.Point(3, 138);
             this.pnEditPracownik.Name = "pnEditPracownik";
             this.pnEditPracownik.Size = new System.Drawing.Size(954, 84);
             this.pnEditPracownik.TabIndex = 3;
@@ -146,17 +152,19 @@
             this.pnPracownikSaveButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnPracownikSaveButtons.Controls.Add(this.btnSaveEditPracownik);
             this.pnPracownikSaveButtons.Controls.Add(this.btnCancelEditPracownik);
-            this.pnPracownikSaveButtons.Location = new System.Drawing.Point(735, 45);
+            this.pnPracownikSaveButtons.Location = new System.Drawing.Point(699, 45);
             this.pnPracownikSaveButtons.Name = "pnPracownikSaveButtons";
-            this.pnPracownikSaveButtons.Size = new System.Drawing.Size(219, 36);
+            this.pnPracownikSaveButtons.Size = new System.Drawing.Size(255, 36);
             this.pnPracownikSaveButtons.TabIndex = 12;
             // 
             // btnSaveEditPracownik
             // 
             this.btnSaveEditPracownik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveEditPracownik.Location = new System.Drawing.Point(25, 10);
+            this.btnSaveEditPracownik.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveEditPracownik.Image")));
+            this.btnSaveEditPracownik.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveEditPracownik.Location = new System.Drawing.Point(3, 1);
             this.btnSaveEditPracownik.Name = "btnSaveEditPracownik";
-            this.btnSaveEditPracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnSaveEditPracownik.Size = new System.Drawing.Size(120, 32);
             this.btnSaveEditPracownik.TabIndex = 10;
             this.btnSaveEditPracownik.Text = "Save";
             this.btnSaveEditPracownik.UseVisualStyleBackColor = true;
@@ -165,11 +173,13 @@
             // btnCancelEditPracownik
             // 
             this.btnCancelEditPracownik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelEditPracownik.Location = new System.Drawing.Point(121, 10);
+            this.btnCancelEditPracownik.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelEditPracownik.Image")));
+            this.btnCancelEditPracownik.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelEditPracownik.Location = new System.Drawing.Point(126, 0);
             this.btnCancelEditPracownik.Name = "btnCancelEditPracownik";
-            this.btnCancelEditPracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnCancelEditPracownik.Size = new System.Drawing.Size(120, 32);
             this.btnCancelEditPracownik.TabIndex = 11;
-            this.btnCancelEditPracownik.Text = "Cancel";
+            this.btnCancelEditPracownik.Text = "  Cancel";
             this.btnCancelEditPracownik.UseVisualStyleBackColor = true;
             this.btnCancelEditPracownik.Click += new System.EventHandler(this.btnCancelEditPracownik_Click);
             // 
@@ -227,38 +237,44 @@
             this.pnPracownikEditButtons.Controls.Add(this.btnEditPracownik);
             this.pnPracownikEditButtons.Controls.Add(this.btnAddPracownik);
             this.pnPracownikEditButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnPracownikEditButtons.Location = new System.Drawing.Point(3, 230);
+            this.pnPracownikEditButtons.Location = new System.Drawing.Point(3, 222);
             this.pnPracownikEditButtons.Name = "pnPracownikEditButtons";
-            this.pnPracownikEditButtons.Size = new System.Drawing.Size(954, 35);
+            this.pnPracownikEditButtons.Size = new System.Drawing.Size(954, 43);
             this.pnPracownikEditButtons.TabIndex = 7;
             // 
             // btnRemovePracownik
             // 
-            this.btnRemovePracownik.Location = new System.Drawing.Point(201, 6);
+            this.btnRemovePracownik.Image = ((System.Drawing.Image)(resources.GetObject("btnRemovePracownik.Image")));
+            this.btnRemovePracownik.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemovePracownik.Location = new System.Drawing.Point(221, 6);
             this.btnRemovePracownik.Name = "btnRemovePracownik";
-            this.btnRemovePracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnRemovePracownik.Size = new System.Drawing.Size(100, 32);
             this.btnRemovePracownik.TabIndex = 5;
-            this.btnRemovePracownik.Text = "Remove";
+            this.btnRemovePracownik.Text = "    Remove";
             this.btnRemovePracownik.UseVisualStyleBackColor = true;
             this.btnRemovePracownik.Click += new System.EventHandler(this.btnRemovePracownik_Click);
             // 
             // btnEditPracownik
             // 
-            this.btnEditPracownik.Location = new System.Drawing.Point(105, 6);
+            this.btnEditPracownik.Image = ((System.Drawing.Image)(resources.GetObject("btnEditPracownik.Image")));
+            this.btnEditPracownik.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditPracownik.Location = new System.Drawing.Point(115, 6);
             this.btnEditPracownik.Name = "btnEditPracownik";
-            this.btnEditPracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnEditPracownik.Size = new System.Drawing.Size(100, 32);
             this.btnEditPracownik.TabIndex = 4;
-            this.btnEditPracownik.Text = "Edit";
+            this.btnEditPracownik.Text = "  Edit";
             this.btnEditPracownik.UseVisualStyleBackColor = true;
             this.btnEditPracownik.Click += new System.EventHandler(this.btnEditPracownik_Click);
             // 
             // btnAddPracownik
             // 
+            this.btnAddPracownik.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPracownik.Image")));
+            this.btnAddPracownik.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddPracownik.Location = new System.Drawing.Point(9, 6);
             this.btnAddPracownik.Name = "btnAddPracownik";
-            this.btnAddPracownik.Size = new System.Drawing.Size(90, 22);
+            this.btnAddPracownik.Size = new System.Drawing.Size(100, 32);
             this.btnAddPracownik.TabIndex = 3;
-            this.btnAddPracownik.Text = "Add";
+            this.btnAddPracownik.Text = "  Add";
             this.btnAddPracownik.UseVisualStyleBackColor = true;
             this.btnAddPracownik.Click += new System.EventHandler(this.btnAddPracownik_Click);
             // 
@@ -335,9 +351,11 @@
             // btnCancelGrupaPracownicza
             // 
             this.btnCancelGrupaPracownicza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelGrupaPracownicza.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelGrupaPracownicza.Image")));
+            this.btnCancelGrupaPracownicza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelGrupaPracownicza.Location = new System.Drawing.Point(825, 8);
             this.btnCancelGrupaPracownicza.Name = "btnCancelGrupaPracownicza";
-            this.btnCancelGrupaPracownicza.Size = new System.Drawing.Size(120, 30);
+            this.btnCancelGrupaPracownicza.Size = new System.Drawing.Size(120, 32);
             this.btnCancelGrupaPracownicza.TabIndex = 2;
             this.btnCancelGrupaPracownicza.Text = "Cancel";
             this.btnCancelGrupaPracownicza.UseVisualStyleBackColor = true;
@@ -346,9 +364,11 @@
             // btnSaveGrupaPracownicza
             // 
             this.btnSaveGrupaPracownicza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveGrupaPracownicza.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveGrupaPracownicza.Image")));
+            this.btnSaveGrupaPracownicza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveGrupaPracownicza.Location = new System.Drawing.Point(699, 8);
             this.btnSaveGrupaPracownicza.Name = "btnSaveGrupaPracownicza";
-            this.btnSaveGrupaPracownicza.Size = new System.Drawing.Size(120, 30);
+            this.btnSaveGrupaPracownicza.Size = new System.Drawing.Size(120, 32);
             this.btnSaveGrupaPracownicza.TabIndex = 1;
             this.btnSaveGrupaPracownicza.Text = "Save";
             this.btnSaveGrupaPracownicza.UseVisualStyleBackColor = true;
@@ -378,6 +398,7 @@
             this.Controls.Add(this.lvGrupyPracownicze);
             this.Controls.Add(this.gbEdit);
             this.Controls.Add(this.gbGrupaPracowniczaEditButtons);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "FrmGrupyPracownicze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
