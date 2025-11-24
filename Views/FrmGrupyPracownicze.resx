@@ -158,6 +158,23 @@
         QmCC
 </value>
   </data>
+  <data name="btnCancelGrupaPracownicza.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKpJREFUWEft
+        zlEKAzEIBNDcrL89fO/UYtAlDDMmwrb0wweBNTprRmut/Y3H8/WuHI/dB3/KlsTdVx5ReYC5/RHVB5i1
+        tm+WQXIuGtXj8YndrdJ+FlRYRi1R95e0KagMLsOawoEI4fH2hPUqy1FHQ2CXOV5ucDDCeLw9Yb2KHstR
+        R0NAZXAp1hQORAiPtyesDZsz6v6SNgXM7Jak/WhWj8e3y8PpXGut/cgYH36IK2KUvA+fAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="btnSaveGrupaPracownicza.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAIJJREFUWEft
+        jlEKgDAMQ3czfz28d1JWWpBsU9pVFMmDfHRd0hRCCPkcy7rtHqktDwztHbG3R0p4ClTSS3gLVNILRKT2
+        eSJh/y5Q5550LeBsoOcs/dJyuRwQ8QzBMGuM0rWA8xSRsF6hO+nXFlyi0aRrAecpImHpBSLyeuUYIYS8
+        TykHLpcK5k1lExwAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnRemovePracownik.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAHNJREFUWEft
@@ -179,23 +196,6 @@
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAGpJREFUWEft
         zksOwCAIBFBu5raH9052M0aaYALE/uK8ZDbtgAgRkUc5auvBp2fxAB6wxwH6kUyw5sLq9aAyWKVIsCbP
         WhoJ1twj+pDuz4KqT3pwlV8coDueYMwnPbjKpw/Q/yLBOBG9TeQEH/4yWPZvllUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnCancelGrupaPracownicza.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKpJREFUWEft
-        zlEKAzEIBNDcrL89fO/UYtAlDDMmwrb0wweBNTprRmut/Y3H8/WuHI/dB3/KlsTdVx5ReYC5/RHVB5i1
-        tm+WQXIuGtXj8YndrdJ+FlRYRi1R95e0KagMLsOawoEI4fH2hPUqy1FHQ2CXOV5ucDDCeLw9Yb2KHstR
-        R0NAZXAp1hQORAiPtyesDZsz6v6SNgXM7Jak/WhWj8e3y8PpXGut/cgYH36IK2KUvA+fAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
-  <data name="btnSaveGrupaPracownicza.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAIJJREFUWEft
-        jlEKgDAMQ3czfz28d1JWWpBsU9pVFMmDfHRd0hRCCPkcy7rtHqktDwztHbG3R0p4ClTSS3gLVNILRKT2
-        eSJh/y5Q5550LeBsoOcs/dJyuRwQ8QzBMGuM0rWA8xSRsF6hO+nXFlyi0aRrAecpImHpBSLyeuUYIYS8
-        TykHLpcK5k1lExwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

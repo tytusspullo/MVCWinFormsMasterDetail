@@ -12,6 +12,7 @@ namespace MVCWinFormsMasterDetail
 {
     public partial class FrmMain : Form
     {
+        List<GrupaPracownicza> grupyPracownicze = null;
         public FrmMain()
         {
             IsMdiContainer = true;
@@ -21,8 +22,27 @@ namespace MVCWinFormsMasterDetail
 
         private void Load()
         {
-            List<GrupaPracownicza> grupyPracownicze = new List<GrupaPracownicza>();
+            grupyPracownicze = new List<GrupaPracownicza>();
+            LoadSampleData();
+            var view = new FrmGrupyPracownicze();
+            var controller = new GrupyPracowniczeController(view, grupyPracownicze);
+            controller.LoadView();
+            view.Show();
+        }
 
+        private void grupyPracowniczeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Load();
+        }
+
+        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LoadSampleData()
+        {
+            grupyPracownicze.Clear();
             var grupa = new GrupaPracownicza();
             grupa.IdGrupyPracowniczej = 1;
             grupa.NazwaGrupyPracowniczej = "Apteka";
@@ -42,22 +62,8 @@ namespace MVCWinFormsMasterDetail
             grupa3.NazwaGrupyPracowniczej = "Odzial Ratunkowy";
             grupa3.Pracownicy.Add(new Pracownik(15, "Kowalski", "Jan"));
             grupyPracownicze.Add(grupa3);
-
-            var view = new FrmGrupyPracownicze();
-            var controller = new GrupyPracowniczeController(view, grupyPracownicze);
-            controller.LoadView();
-            view.Show();
         }
 
-        private void grupyPracowniczeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Load();
-        }
-
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         
     }
