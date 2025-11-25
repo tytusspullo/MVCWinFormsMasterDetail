@@ -109,7 +109,7 @@ namespace MVCWinFormsMasterDetail
             _seletedGrupaPracownicza = new GrupaPracownicza(0, "");
             _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
             this.UpdateViewDetailValues(_editedGrupaPracownicza);
-         
+            //TODO ClearListPracownicy
             _view.State.AddGrupaPracowniczaClick();
         }
         public void EditGrupaPracownicza()
@@ -139,21 +139,19 @@ namespace MVCWinFormsMasterDetail
             if (id != 0)
             {
                 var grupaPracowniczaToRemove = _grupyPracownicze.SingleOrDefault(g => g.IdGrupyPracowniczej == id);
+                
                 if (grupaPracowniczaToRemove != null)
                 {
-                    int newSelectedIndex = this._grupyPracownicze.IndexOf(grupaPracowniczaToRemove);
+                    int deletedIndex = this._grupyPracownicze.IndexOf(grupaPracowniczaToRemove);//
                     this._grupyPracownicze.Remove(grupaPracowniczaToRemove);
                     this._view.RemoveFromGrid(grupaPracowniczaToRemove);
 
-                    if (newSelectedIndex > -1 && newSelectedIndex < _grupyPracownicze.Count)
+                    if (_grupyPracownicze.Count > 0)
                     {
-                        this._view.SetSelectedInGrid((GrupaPracownicza)_grupyPracownicze[newSelectedIndex]);//
-                        //ustaw edytowana grupe pracownicza jezeli wiecej niz 0
-                        if (_grupyPracownicze.Count > 0)
-                        { 
-                            
-                        }
-                        
+                        var newdForSelect = _grupyPracownicze.ElementAtOrDefault(deletedIndex)  //cover normal case
+                                                ?? _grupyPracownicze.LastOrDefault();           //cover case when removed last and get by index
+                        _view.SetSelectedInGrid(newdForSelect);
+                        //change edited, change record in display?
                     }
                 }
             }
@@ -280,13 +278,14 @@ namespace MVCWinFormsMasterDetail
                 var pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == id);
                 if (pracownikToRemove != null)
                 {
-                    int newSelectedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
+                    int deletedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
                     _editedGrupaPracownicza.Pracownicy.Remove(pracownikToRemove);
                     _view.RemoveFromGrid(pracownikToRemove);
 
-                    if (newSelectedIndex > -1 && newSelectedIndex < _editedGrupaPracownicza.Pracownicy.Count)
+                    //TODO refactor > switch to linq
+                    if (deletedIndex > -1 && deletedIndex < _editedGrupaPracownicza.Pracownicy.Count)
                     {
-                        _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[newSelectedIndex]); //invoke Selection change
+                        _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[deletedIndex]); //invoke Selection change
                     }
                     else
                     {

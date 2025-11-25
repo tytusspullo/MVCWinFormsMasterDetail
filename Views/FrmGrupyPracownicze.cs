@@ -190,8 +190,10 @@ namespace MVCWinFormsMasterDetail
         }
         public void SetSelectedInGrid(GrupaPracownicza grupaPracownicza)
         {
+            int id = grupaPracownicza?.IdGrupyPracowniczej ?? 0;
+
             if (lvGrupyPracownicze.SelectedItems.Count == 1 &&
-                lvGrupyPracownicze.SelectedItems[0].Text == grupaPracownicza.IdGrupyPracowniczej.ToString())
+                lvGrupyPracownicze.SelectedItems[0].Text == id.ToString())
             {
                 return; // No change needed
             }
@@ -199,7 +201,7 @@ namespace MVCWinFormsMasterDetail
             lvGrupyPracownicze.SelectedItems.Clear();
             foreach (ListViewItem row in lvGrupyPracownicze.Items)
             {
-                if (row.Text == grupaPracownicza.IdGrupyPracowniczej.ToString())
+                if (row.Text == id.ToString())
                 {
                     row.Selected = true;
                     row.Focused = true;
@@ -278,8 +280,10 @@ namespace MVCWinFormsMasterDetail
         }
         public void SetSelectedInGrid(Pracownik pracownik)
         {
+            int id = pracownik?.IdPracownika ?? 0;
+
             if (lvPracownicy.SelectedItems.Count == 1 &&
-                lvPracownicy.SelectedItems[0].Text == pracownik.IdPracownika.ToString())
+                lvPracownicy.SelectedItems[0].Text == id.ToString())
             {
                 return; 
             }
@@ -287,7 +291,7 @@ namespace MVCWinFormsMasterDetail
             lvPracownicy.SelectedItems.Clear(); 
             foreach (ListViewItem row in lvPracownicy.Items)
             {
-                if (row.Text == pracownik.IdPracownika.ToString())
+                if (row.Text == id.ToString())
                 {
                     row.Selected = true;
                     row.Focused = true;
