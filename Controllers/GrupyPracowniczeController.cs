@@ -106,10 +106,16 @@ namespace MVCWinFormsMasterDetail
         #region EventsDelegatedFromView
         public void AddGrupaPracownicza()
         {
+            //zaznaczona 2ga grupa pracownicza z 2ma pracownikami
+            //dodaj grupa pracownicza
+            //anuluj grupa pracownicza
+            //edytuj grupa pracownicza, nadal pusto w gridzie a powinien miec 2 pracownikow a pola w edycji z nazwa pokazuja pusto
+            //anuluj grupa pracownicza nie przywraca selected edited w edycji grupy i liscie pracownikow
             _seletedGrupaPracownicza = new GrupaPracownicza(0, "");
             _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
             this.UpdateViewDetailValues(_editedGrupaPracownicza);
-            //TODO ClearListPracownicy
+            _view.ClearGridPracownicy();
+            //TODO zmiana pracownika selected?edited?
             _view.State.AddGrupaPracowniczaClick();
         }
         public void EditGrupaPracownicza()
@@ -282,9 +288,10 @@ namespace MVCWinFormsMasterDetail
                     _editedGrupaPracownicza.Pracownicy.Remove(pracownikToRemove);
                     _view.RemoveFromGrid(pracownikToRemove);
 
-                    //TODO refactor > switch to linq
-                    if (deletedIndex > -1 && deletedIndex < _editedGrupaPracownicza.Pracownicy.Count)
+                    if (_editedGrupaPracownicza.Pracownicy.Count > 0)
                     {
+                        var newForSelect = _editedGrupaPracownicza.Pracownicy.ElementAtOrDefault(deletedIndex)
+                            ?? _editedGrupaPracownicza.Pracownicy.LastOrDefault();
                         _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[deletedIndex]); //invoke Selection change
                     }
                     else
@@ -306,8 +313,7 @@ namespace MVCWinFormsMasterDetail
             }
             else
             {
-                int idx = _editedGrupaPracownicza.Pracownicy.IndexOf(
-                              _editedGrupaPracownicza.Pracownicy.FirstOrDefault(p => p.IdPracownika == _selectedPracownik.IdPracownika));
+                int idx = _editedGrupaPracownicza.Pracownicy.IndexOf(_selectedPracownik);
                 if (idx != -1)
                 {
                     _editedGrupaPracownicza.Pracownicy[idx] = _editedPracownik;
