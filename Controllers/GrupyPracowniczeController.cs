@@ -11,7 +11,7 @@ namespace MVCWinFormsMasterDetail
     {
         List<GrupaPracownicza> _grupyPracownicze = new List<GrupaPracownicza>();    //model
         IGrupyPracowniczeViewMethodsToManipulateView _view = null;                  //view reference
-        GrupaPracownicza _seletedGrupaPracownicza = null;                           //for searching purpouses, pointeron orginal list / model
+        GrupaPracownicza _seletedGrupaPracownicza = null;                           //for searching purpouses, pointer on orginal list / model
         GrupaPracownicza _editedGrupaPracownicza = null;                            //for editing operation and SAVE or REJECT changes, deep copy of selected item
         Pracownik _selectedPracownik = null;                                        //for searching purpouses
         Pracownik _editedPracownik = null;                                          //for editing operation and SAVE or REJECT changes, deep copy of selected item
@@ -36,13 +36,13 @@ namespace MVCWinFormsMasterDetail
                 _seletedGrupaPracownicza = _grupyPracownicze[0];
                 _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
                 _view.SetSelectedInGrid(_seletedGrupaPracownicza);
-                UpdateViewDetailValues(_editedGrupaPracownicza);
+                UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
             }
             else
             {
                 _seletedGrupaPracownicza = new GrupaPracownicza(0, "");
                 _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
-                UpdateViewDetailValues(_editedGrupaPracownicza);
+                UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
             }
             _view.ClearGridPracownicy();
             _view.UpdateStatusBarState();
@@ -57,7 +57,7 @@ namespace MVCWinFormsMasterDetail
             get => _editedPracownik; 
             set => _editedPracownik = value; 
         }
-        public void UpdateViewDetailValues(GrupaPracownicza grupaPracownicza)
+        public void UpdateViewWithGrupaPracowniczaValues(GrupaPracownicza grupaPracownicza)
         {
             if (grupaPracownicza != null)
             {
@@ -70,7 +70,7 @@ namespace MVCWinFormsMasterDetail
                 _view.GrupaPracowniczaNazwa = string.Empty;
             }
         }
-        private void UpdateViewDetailValues(Pracownik pracownik)
+        private void UpdateViewWithPracownikValues(Pracownik pracownik)
         {
             if (pracownik != null)
             {
@@ -103,6 +103,14 @@ namespace MVCWinFormsMasterDetail
             }
         }
 
+        private void FillListPracownicy(IList<Pracownik> pracownicy)
+        {
+            foreach (Pracownik item in pracownicy)
+            {
+                _view.AddToGrid(item);
+            }
+        }
+
         #region EventsDelegatedFromView
         public void AddGrupaPracownicza()
         {
@@ -113,7 +121,7 @@ namespace MVCWinFormsMasterDetail
             //anuluj grupa pracownicza nie przywraca selected edited w edycji grupy i liscie pracownikow
             _seletedGrupaPracownicza = new GrupaPracownicza(0, "");
             _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
-            this.UpdateViewDetailValues(_editedGrupaPracownicza);
+            this.UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
             _view.ClearGridPracownicy();
             //TODO zmiana pracownika selected?edited?
             _view.State.AddGrupaPracowniczaClick();
@@ -122,17 +130,15 @@ namespace MVCWinFormsMasterDetail
         {
             if (_grupyPracownicze.Count > 0)
             {
-                UpdateViewDetailValues(_editedGrupaPracownicza);
+                UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
+
                 _view.ClearGridPracownicy();
                 if (_editedGrupaPracownicza.Pracownicy.Count > 0)
                 {
-                    foreach (Pracownik pracownik in _editedGrupaPracownicza.Pracownicy)
-                    {
-                        _view.AddToGrid(pracownik);
-                    }
+                    FillListPracownicy(_editedGrupaPracownicza.Pracownicy);
                     _selectedPracownik = _editedGrupaPracownicza.Pracownicy[0];
                     _editedPracownik = (Pracownik)_selectedPracownik.Clone();
-                    UpdateViewDetailValues(_editedPracownik);
+                    UpdateViewWithPracownikValues(_editedPracownik);
                     _view.SetSelectedInGrid(_editedPracownik);
                 }
                 _view.State.EditGrupaPracowniczaClick();
@@ -172,15 +178,8 @@ namespace MVCWinFormsMasterDetail
 
             if (!string.IsNullOrEmpty(selectedGrupaPracowniczaId))
             {
-                foreach (GrupaPracownicza grupaPracownicza in _grupyPracownicze)
-                {
-                    if (grupaPracownicza.IdGrupyPracowniczej == Convert.ToInt32(selectedGrupaPracowniczaId))
-                    {
-                        _seletedGrupaPracownicza = grupaPracownicza;
-                        _editedGrupaPracownicza = (GrupaPracownicza)grupaPracownicza.Clone();
-                        break;
-                    }
-                }
+                _seletedGrupaPracownicza = _grupyPracownicze.SingleOrDefault(p => p.IdGrupyPracowniczej == Convert.ToInt32(selectedGrupaPracowniczaId));
+                _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
             }
 
             if (_seletedGrupaPracownicza == null)
@@ -191,15 +190,12 @@ namespace MVCWinFormsMasterDetail
 
             if (_seletedGrupaPracownicza.IdGrupyPracowniczej != previousId)
             {
-                UpdateViewDetailValues(_editedGrupaPracownicza);
+                UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
                 _view.SetSelectedInGrid(_seletedGrupaPracownicza);
                 _view.ClearGridPracownicy();
                 if (_editedGrupaPracownicza.Pracownicy.Count > 0)
                 {
-                    foreach (Pracownik pracownik in _editedGrupaPracownicza.Pracownicy)
-                    {
-                        _view.AddToGrid(pracownik);
-                    }
+                    FillListPracownicy(_editedGrupaPracownicza.Pracownicy);
                     _selectedPracownik = _editedGrupaPracownicza.Pracownicy[0];
                     _editedPracownik = (Pracownik)_selectedPracownik.Clone();
                     _view.SetSelectedInGrid(_editedPracownik);
@@ -218,8 +214,7 @@ namespace MVCWinFormsMasterDetail
             }
             else
             {
-                int idx = _grupyPracownicze.IndexOf(
-                                _grupyPracownicze.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
+                int idx = _grupyPracownicze.IndexOf(_grupyPracownicze.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
                 if (idx != -1)
                 {
                     _grupyPracownicze[idx] = _editedGrupaPracownicza; 
@@ -238,7 +233,7 @@ namespace MVCWinFormsMasterDetail
             //uaktualnij dane w formularzu
             //uaktualnij pracownikow
             _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
-            UpdateViewDetailValues(_editedGrupaPracownicza);
+            UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
 
             _view.State.CancelGrupaPracowniczaClick();
             //UpdateViewLookToItsState();
@@ -251,7 +246,7 @@ namespace MVCWinFormsMasterDetail
                 {
                     _selectedPracownik = pracownik;
                     _editedPracownik = (Pracownik)_selectedPracownik.Clone();
-                    UpdateViewDetailValues(EditedPracownik);
+                    UpdateViewWithPracownikValues(EditedPracownik);
                     _view.SetSelectedInGrid(EditedPracownik);
                     break;
                 }
@@ -262,7 +257,7 @@ namespace MVCWinFormsMasterDetail
             var pracownik = new Pracownik(0, "", "");
             _selectedPracownik = pracownik;
             _editedPracownik = (Pracownik)_selectedPracownik.Clone();
-            this.UpdateViewDetailValues(_editedPracownik);
+            this.UpdateViewWithPracownikValues(_editedPracownik);
             
             _view.State.AddPracownikClick();
             //UpdateViewLookToItsState();
@@ -271,7 +266,7 @@ namespace MVCWinFormsMasterDetail
         {
             if (_editedGrupaPracownicza.Pracownicy.Count > 0)
             {
-                this.UpdateViewDetailValues(_editedPracownik);
+                this.UpdateViewWithPracownikValues(_editedPracownik);
                 _view.State.EditPracownikClick();
             }
         }
