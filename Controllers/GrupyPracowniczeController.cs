@@ -240,16 +240,13 @@ namespace MVCWinFormsMasterDetail
         }
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
-            foreach (Pracownik pracownik in _editedGrupaPracownicza.Pracownicy)
+            var pracownik = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == Convert.ToInt32(selectedPracownikId));
+            if (pracownik != null)
             {
-                if (pracownik.IdPracownika == Convert.ToInt32(selectedPracownikId))
-                {
-                    _selectedPracownik = pracownik;
-                    _editedPracownik = (Pracownik)_selectedPracownik.Clone();
-                    UpdateViewWithPracownikValues(EditedPracownik);
-                    _view.SetSelectedInGrid(EditedPracownik);
-                    break;
-                }
+                _selectedPracownik = pracownik;
+                _editedPracownik = (Pracownik)_selectedPracownik.Clone();
+                UpdateViewWithPracownikValues(EditedPracownik);
+                _view.SetSelectedInGrid(EditedPracownik);
             }
         }
         public void AddPracownik()
