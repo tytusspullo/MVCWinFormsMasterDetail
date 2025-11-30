@@ -23,7 +23,7 @@ namespace MVCWinFormsMasterDetail
         private void Load()
         {
             grupyPracownicze = new List<GrupaPracownicza>();
-            LoadSampleData();
+            //LoadSampleData();
             var view = new FrmGrupyPracownicze();
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
             controller.LoadView();

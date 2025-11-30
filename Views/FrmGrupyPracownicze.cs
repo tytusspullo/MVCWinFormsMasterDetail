@@ -90,7 +90,6 @@ namespace MVCWinFormsMasterDetail
             return this.pnPracownikSaveButtons;
         }
 
-
         #region IGrupyPracowniczeView_MethodsNeededToManipulateView
         public void SetController(GrupyPracowniczeController controller)
         {
@@ -221,7 +220,11 @@ namespace MVCWinFormsMasterDetail
             gbEdit.Dock = DockStyle.Top;
             lvGrupyPracownicze.Visible = true;
         }
-         
+        void IGrupyPracowniczeViewMethodsToManipulateView.EnableEditIDGrupaPracownicza(bool enable)
+        {
+            tbIDGrupaPracownicza.Enabled = enable;
+        }
+
         public void ClearGridPracownicy()
         {
             this.lvPracownicy.Columns.Clear();

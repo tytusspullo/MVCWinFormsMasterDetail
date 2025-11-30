@@ -10,12 +10,12 @@ namespace MVCWinFormsMasterDetail
     public interface IGrupyPracowniczeViewMethodsToManipulateView
     {
         void SetController(GrupyPracowniczeController controller);
-        
+
         //State - Design Patern
         GrupaPracowniczaState State { get; set; }
         void UpdateStatusBarState();
 
-        
+
 
         //Methods to manipulate Master
         void ClearGridGrupyPracownicze();
@@ -28,6 +28,7 @@ namespace MVCWinFormsMasterDetail
         string GrupaPracowniczaNazwa { get; set; }
         void ShowEditGroupBoxGrupaPracownicza();
         void HideEditGroupBoxGrupaPracownicza();
+        void EnableEditIDGrupaPracownicza(bool enable);
 
         //Methods to manipulate Details
         void ClearGridPracownicy();
