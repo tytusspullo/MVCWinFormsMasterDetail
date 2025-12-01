@@ -220,10 +220,6 @@ namespace MVCWinFormsMasterDetail
             gbEdit.Dock = DockStyle.Top;
             lvGrupyPracownicze.Visible = true;
         }
-        void IGrupyPracowniczeViewMethodsToManipulateView.EnableEditIDGrupaPracownicza(bool enable)
-        {
-            tbIDGrupaPracownicza.Enabled = enable;
-        }
 
         public void ClearGridPracownicy()
         {

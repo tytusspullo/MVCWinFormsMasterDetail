@@ -16,7 +16,6 @@ namespace MVCWinFormsMasterDetail
         void UpdateStatusBarState();
 
 
-
         //Methods to manipulate Master
         void ClearGridGrupyPracownicze();
         void AddToGrid(GrupaPracownicza grupaPracownicza);
@@ -28,7 +27,6 @@ namespace MVCWinFormsMasterDetail
         string GrupaPracowniczaNazwa { get; set; }
         void ShowEditGroupBoxGrupaPracownicza();
         void HideEditGroupBoxGrupaPracownicza();
-        void EnableEditIDGrupaPracownicza(bool enable);
 
         //Methods to manipulate Details
         void ClearGridPracownicy();

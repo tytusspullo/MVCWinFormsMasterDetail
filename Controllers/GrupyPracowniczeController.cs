@@ -114,15 +114,8 @@ namespace MVCWinFormsMasterDetail
         #region EventsDelegatedFromView
         public void AddGrupaPracownicza()
         {
-            //zaznaczona 2ga grupa pracownicza z 2ma pracownikami
-            //dodaj grupa pracownicza
-            //anuluj grupa pracownicza
-            //edytuj grupa pracownicza, nadal pusto w gridzie a powinien miec 2 pracownikow a pola w edycji z nazwa pokazuja pusto
-            //anuluj grupa pracownicza nie przywraca selected edited w edycji grupy i liscie pracownikow
-            
             _editedGrupaPracownicza = new GrupaPracownicza(0, "");
             this.UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
-            _view.EnableEditIDGrupaPracownicza(true);
             _view.ClearGridPracownicy();
             _view.State.AddGrupaPracowniczaClick();
         }
@@ -131,7 +124,6 @@ namespace MVCWinFormsMasterDetail
             if (_grupyPracownicze.Count > 0)
             {
                 UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
-                _view.EnableEditIDGrupaPracownicza(false);
                 _view.ClearGridPracownicy();
                 if (_editedGrupaPracownicza.Pracownicy.Count > 0)
                 {
@@ -205,18 +197,24 @@ namespace MVCWinFormsMasterDetail
         public void SaveGrupaPracownicza()
         {
             UpdateGrupaPracowniczaWithViewValues(_editedGrupaPracownicza); //get changed values
+
             if (IsNewRecord())
             {
+                var generator = new GrupaPracowniczaIDGenerator();
+                _editedGrupaPracownicza.IdGrupyPracowniczej = generator.GenerateID(_grupyPracownicze);
                 this._grupyPracownicze.Add(_editedGrupaPracownicza);
                 this._view.AddToGrid(_editedGrupaPracownicza);
             }
             else
             {
-                int idx = _grupyPracownicze.IndexOf(_grupyPracownicze.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
-                if (idx != -1)
+                if (_grupyPracownicze.Contains(_seletedGrupaPracownicza))
                 {
-                    _grupyPracownicze[idx] = _editedGrupaPracownicza; 
-                    this._view.UpdateGrid(_editedGrupaPracownicza);
+                    int idx = _grupyPracownicze.IndexOf(_grupyPracownicze.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
+                    if (idx != -1)
+                    {
+                        _grupyPracownicze[idx] = _editedGrupaPracownicza;
+                        this._view.UpdateGrid(_editedGrupaPracownicza);
+                    }
                 }
             }
             _view.SetSelectedInGrid(_editedGrupaPracownicza);
@@ -226,6 +224,7 @@ namespace MVCWinFormsMasterDetail
         private bool IsNewRecord()
         {
             return _grupyPracownicze.SingleOrDefault(p => p.IdGrupyPracowniczej == _editedGrupaPracownicza.IdGrupyPracowniczej) == null;
+               
         }
         public void CancelGrupaPracownicza()
         {

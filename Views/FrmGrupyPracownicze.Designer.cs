@@ -376,6 +376,7 @@
             // 
             this.tbIDGrupaPracownicza.Location = new System.Drawing.Point(65, 17);
             this.tbIDGrupaPracownicza.Name = "tbIDGrupaPracownicza";
+            this.tbIDGrupaPracownicza.ReadOnly = true;
             this.tbIDGrupaPracownicza.Size = new System.Drawing.Size(137, 20);
             this.tbIDGrupaPracownicza.TabIndex = 1;
             // 
