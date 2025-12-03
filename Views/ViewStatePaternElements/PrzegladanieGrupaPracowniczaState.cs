@@ -25,7 +25,7 @@ namespace MVCWinFormsMasterDetail
         }
         public override string ToString()
         {
-            return "PrzegladanieGrupaPracowniczaState";
+            return "Grupy Pracownicze - Przeglądanie";
         }
     }
 }

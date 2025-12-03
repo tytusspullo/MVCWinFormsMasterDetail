@@ -36,7 +36,7 @@ namespace MVCWinFormsMasterDetail
         }
         public override string ToString()
         {
-            return "EdycjaGrupaPracowniczaState";
+            return "Grupy Pracownicze - Edycja";
         }
     }
 }

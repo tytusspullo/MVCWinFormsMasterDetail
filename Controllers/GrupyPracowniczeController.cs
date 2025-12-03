@@ -294,8 +294,10 @@ namespace MVCWinFormsMasterDetail
         public void SaveEditPracownik() 
         {
             UpdatePracownikWithViewValues(_editedPracownik);
-            if (!this._editedGrupaPracownicza.Pracownicy.Contains(_selectedPracownik))
+            if (IsNewPracownik())
             {
+                var generator = new PracownikIDGenerator();
+                _editedPracownik.IdPracownika = generator.GenerateID(_editedGrupaPracownicza.Pracownicy);
                 this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
                 this._view.AddToGrid(_editedPracownik);
             }
@@ -310,6 +312,10 @@ namespace MVCWinFormsMasterDetail
             }
             _view.SetSelectedInGrid(_editedPracownik);
             _view.State.SavePracownikClick();
+        }
+        private bool IsNewPracownik()
+        {
+            return _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == _editedPracownik.IdPracownika) == null;
         }
         public void CancelEditPracownik()
         {

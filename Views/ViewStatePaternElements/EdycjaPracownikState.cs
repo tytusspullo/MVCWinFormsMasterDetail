@@ -26,7 +26,7 @@ namespace MVCWinFormsMasterDetail
        
         public override string ToString()
         {
-            return "EdycjaPracownikState"; 
+            return "Pracownik - Edycja"; 
         }
     }
 }

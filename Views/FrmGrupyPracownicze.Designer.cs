@@ -227,6 +227,7 @@
             // 
             this.tbIDPracownika.Location = new System.Drawing.Point(78, 5);
             this.tbIDPracownika.Name = "tbIDPracownika";
+            this.tbIDPracownika.ReadOnly = true;
             this.tbIDPracownika.Size = new System.Drawing.Size(137, 20);
             this.tbIDPracownika.TabIndex = 8;
             // 

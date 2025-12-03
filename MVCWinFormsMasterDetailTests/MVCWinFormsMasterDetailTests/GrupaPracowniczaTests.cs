@@ -32,7 +32,7 @@ namespace MVCWinFormsMasterDetailTests
             var grupyPracownicze = new List<GrupaPracownicza>();
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
             controller.AddGrupaPracownicza();
-            controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
+            //controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Nowak";
             controller.CancelGrupaPracownicza();
 
@@ -129,7 +129,7 @@ namespace MVCWinFormsMasterDetailTests
             controller.SelectedGrupaPracowniczaChanged("2");
             controller.EditGrupaPracownicza();
             controller.AddPracownik();
-            view.PracownikID = 3;
+            //view.PracownikID = 3;
             view.PracownikImie = "Piotr";
             view.PracownikNazwisko = "Nowak";
             controller.SaveEditPracownik();
