@@ -230,9 +230,13 @@ namespace MVCWinFormsMasterDetail
             if (_seletedGrupaPracownicza != null)
             {
                 _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
-                UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
-                _view.State.CancelGrupaPracowniczaClick();
             }
+            else
+            {
+                _editedGrupaPracownicza = new GrupaPracownicza(0, "");
+            }
+            UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
+            _view.State.CancelGrupaPracowniczaClick();
         }
 
         public void SelectedPracownikChanged(string selectedPracownikId)
