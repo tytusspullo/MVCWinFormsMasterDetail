@@ -117,17 +117,16 @@ namespace MVCWinFormsMasterDetailTests
         {
             FrmGrupyPracownicze view = new FrmGrupyPracownicze();
             var grupyPracownicze = new List<GrupaPracownicza>();
-            grupyPracownicze.Add(new GrupaPracownicza(1, "Nowak Piotr"));
-            grupyPracownicze.Add(new GrupaPracownicza(2, "Nowak Adam"));
+            grupyPracownicze.Add(new GrupaPracownicza(1, "Apteka"));
+            grupyPracownicze.Add(new GrupaPracownicza(2, "Oddział Rehabilitacji"));
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
-            
             controller.SelectedGrupaPracowniczaChanged("2");
             controller.EditGrupaPracownicza();
             controller.AddPracownik();
-            //view.PracownikID = 3;
-            view.PracownikImie = "Piotr";
-            view.PracownikNazwisko = "Nowak";
+            controller.EditedPracownik.Imie = "Piotr";
+            controller.EditedPracownik.Nazwisko = "Nowak";
             controller.SaveEditPracownik();
+            controller.SaveGrupaPracownicza();
             Assert.IsTrue(grupyPracownicze[1].Pracownicy.Count == 1);
         }
         [TestMethod]
@@ -143,7 +142,6 @@ namespace MVCWinFormsMasterDetailTests
             controller.SelectedGrupaPracowniczaChanged("10");
             controller.EditGrupaPracownicza();
             controller.AddPracownik();
-            //controller.EditedPracownik
         }
         [TestMethod]
         public void GrupaPracowniczaTestKopii()
