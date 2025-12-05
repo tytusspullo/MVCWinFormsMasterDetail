@@ -20,7 +20,7 @@ namespace MVCWinFormsMasterDetailTests
             controller.AddGrupaPracownicza();
             controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Nowak";
-            controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
+            //controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
 
             Assert.IsTrue((grupyPracownicze.Count == 1) && grupyPracownicze[0].IdGrupyPracowniczej != 0);
@@ -31,6 +31,7 @@ namespace MVCWinFormsMasterDetailTests
             FrmGrupyPracownicze view = new FrmGrupyPracownicze();
             var grupyPracownicze = new List<GrupaPracownicza>();
             var controller = new GrupyPracowniczeController(view, grupyPracownicze);
+            controller.LoadView();
             controller.AddGrupaPracownicza();
             //controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Nowak";
@@ -47,12 +48,12 @@ namespace MVCWinFormsMasterDetailTests
             controller.AddGrupaPracownicza();
             controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 2;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Nowak";
-            controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
+            //controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
             controller.AddGrupaPracownicza();
             controller.EditedGrupaPracownicza.IdGrupyPracowniczej = 3;
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = "Kowalski";
-            controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
+            //controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
 
             Assert.IsTrue((grupyPracownicze.Count == 2));
@@ -72,7 +73,7 @@ namespace MVCWinFormsMasterDetailTests
             controller.SelectedGrupaPracowniczaChanged(changedId);
             controller.EditGrupaPracownicza();
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = newName;
-            controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
+            //controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
             controller.SaveGrupaPracownicza();
 
             var grupaPracownicza = grupyPracownicze.SingleOrDefault(w => w.IdGrupyPracowniczej.ToString() == changedId);
@@ -95,7 +96,7 @@ namespace MVCWinFormsMasterDetailTests
             controller.SelectedGrupaPracowniczaChanged(changedId);
             controller.EditGrupaPracownicza();
             controller.EditedGrupaPracownicza.NazwaGrupyPracowniczej = newName;
-            controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
+            //controller.UpdateViewWithGrupaPracowniczaValues(controller.EditedGrupaPracownicza);
             controller.CancelGrupaPracownicza();
 
             var grupaPracownicza = grupyPracownicze.SingleOrDefault(w => w.IdGrupyPracowniczej.ToString() == changedId);

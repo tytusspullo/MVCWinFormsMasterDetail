@@ -58,7 +58,7 @@ namespace MVCWinFormsMasterDetail
             get => _editedPracownik; 
             set => _editedPracownik = value; 
         }
-        public void UpdateViewWithGrupaPracowniczaValues(GrupaPracownicza grupaPracownicza)
+        private void UpdateViewWithGrupaPracowniczaValues(GrupaPracownicza grupaPracownicza)
         {
             if (grupaPracownicza != null)
             {
@@ -146,7 +146,7 @@ namespace MVCWinFormsMasterDetail
                 
                 if (grupaPracowniczaToRemove != null)
                 {
-                    int deletedIndex = this._grupyPracownicze.IndexOf(grupaPracowniczaToRemove);//
+                    int deletedIndex = this._grupyPracownicze.IndexOf(grupaPracowniczaToRemove);
                     this._grupyPracownicze.Remove(grupaPracowniczaToRemove);
                     this._view.RemoveFromGrid(grupaPracowniczaToRemove);
 
@@ -227,9 +227,12 @@ namespace MVCWinFormsMasterDetail
         }
         public void CancelGrupaPracownicza()
         {
-            _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
-            UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
-            _view.State.CancelGrupaPracowniczaClick();
+            //if (_seletedGrupaPracownicza != null)
+            //{
+                _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
+                UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
+                _view.State.CancelGrupaPracowniczaClick();
+            //}
         }
 
         public void SelectedPracownikChanged(string selectedPracownikId)
