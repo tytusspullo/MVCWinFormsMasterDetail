@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCWinFormsMasterDetail.Models
 {
-    internal class PracownikIDGenerator
+    public class PracownikIDGenerator
     {
         //To change if real db used
         public int GenerateID(List<Pracownik> pracownicy)

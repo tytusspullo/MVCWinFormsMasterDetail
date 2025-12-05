@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\views\\viewstatepaternelements\\edycjapracownikstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\edycjapracownikstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\views\\viewstatepaternelements\\edycjagrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\edycjagrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\views\\viewstatepaternelements\\przegladaniegrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\przegladaniegrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\controllers\\grupypracowniczecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:controllers\\grupypracowniczecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\models\\grupapracowniczaidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\grupapracowniczaidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\models\\grupapracownicza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\models\\grupapracownicza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\grupapracownicza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\models\\pracownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\pracownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\viewstatepaternelements\\edycjagrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\edycjagrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\models\\pracownikidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\pracownikidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\viewstatepaternelements\\edycjapracownikstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\edycjapracownikstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\views\\viewstatepaternelements\\grupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\grupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\pracownikidgeneratortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|solutionrelative:mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\pracownikidgeneratortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\grupapracowniczatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,12 +35,36 @@
       "RelativeMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|solutionrelative:mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\grupapracowniczastatetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\grupapracowniczaidgeneratortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|solutionrelative:mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\grupapracowniczaidgeneratortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\frmgrupypracownicze.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\frmgrupypracownicze.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|j:\\users\\greg240\\documents\\mvcwinformsmasterdetail\\mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\grupapracowniczaidgeneratortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ABAAE2-FA67-4B4F-ACC0-FB67A618A40B}|MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests.csproj|solutionrelative:mvcwinformsmasterdetailtests\\mvcwinformsmasterdetailtests\\grupapracowniczaidgeneratortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\models\\pracownikidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\pracownikidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\models\\grupapracowniczaidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\grupapracowniczaidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\frmgrupypracownicze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\viewstatepaternelements\\przegladaniegrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:views\\viewstatepaternelements\\przegladaniegrupapracowniczastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\models\\pracownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|solutionrelative:models\\pracownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A39525B8-82A9-490F-81CD-C6BECB1864A0}|MVCWinFormsMasterDetail.csproj|J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\views\\igrupypracowniczeviewmethodstomanipulateview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,162 +82,124 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EdycjaPracownikState.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\EdycjaPracownikState.cs",
               "RelativeDocumentMoniker": "Views\\ViewStatePaternElements\\EdycjaPracownikState.cs",
               "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\EdycjaPracownikState.cs",
               "RelativeToolTip": "Views\\ViewStatePaternElements\\EdycjaPracownikState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T21:44:24.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GrupyPracowniczeController.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Controllers\\GrupyPracowniczeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GrupyPracowniczeController.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Controllers\\GrupyPracowniczeController.cs",
-              "RelativeToolTip": "Controllers\\GrupyPracowniczeController.cs",
-              "ViewState": "AgIAAN8AAAAAAAAAAAAuwC8BAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:33:50.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmGrupyPracownicze.cs [Design]",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs",
-              "RelativeDocumentMoniker": "Views\\FrmGrupyPracownicze.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs [Design]",
-              "RelativeToolTip": "Views\\FrmGrupyPracownicze.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:23:03.249Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmGrupyPracownicze.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs",
-              "RelativeDocumentMoniker": "Views\\FrmGrupyPracownicze.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs",
-              "RelativeToolTip": "Views\\FrmGrupyPracownicze.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T18:23:42.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "EdycjaGrupaPracowniczaState.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\EdycjaGrupaPracowniczaState.cs",
               "RelativeDocumentMoniker": "Views\\ViewStatePaternElements\\EdycjaGrupaPracowniczaState.cs",
               "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\EdycjaGrupaPracowniczaState.cs",
               "RelativeToolTip": "Views\\ViewStatePaternElements\\EdycjaGrupaPracowniczaState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T21:43:36.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PrzegladanieGrupaPracowniczaState.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
-              "RelativeDocumentMoniker": "Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
-              "RelativeToolTip": "Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T21:44:08.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PracownikIDGenerator.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\PracownikIDGenerator.cs",
-              "RelativeDocumentMoniker": "Models\\PracownikIDGenerator.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\PracownikIDGenerator.cs",
-              "RelativeToolTip": "Models\\PracownikIDGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T18:43:25.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GrupaPracowniczaIDGenerator.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\GrupaPracowniczaIDGenerator.cs",
-              "RelativeDocumentMoniker": "Models\\GrupaPracowniczaIDGenerator.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\GrupaPracowniczaIDGenerator.cs",
-              "RelativeToolTip": "Models\\GrupaPracowniczaIDGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:22:47.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Pracownik.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\Pracownik.cs",
-              "RelativeDocumentMoniker": "Models\\Pracownik.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\Pracownik.cs",
-              "RelativeToolTip": "Models\\Pracownik.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T18:40:09.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "GrupaPracownicza.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\GrupaPracownicza.cs",
               "RelativeDocumentMoniker": "Models\\GrupaPracownicza.cs",
               "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\GrupaPracownicza.cs",
               "RelativeToolTip": "Models\\GrupaPracownicza.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwBcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T11:57:09.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "GrupyPracowniczeController.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Controllers\\GrupyPracowniczeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GrupyPracowniczeController.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Controllers\\GrupyPracowniczeController.cs",
+              "RelativeToolTip": "Controllers\\GrupyPracowniczeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:33:50.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GrupaPracowniczaState.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\GrupaPracowniczaState.cs",
+              "RelativeDocumentMoniker": "Views\\ViewStatePaternElements\\GrupaPracowniczaState.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\GrupaPracowniczaState.cs",
+              "RelativeToolTip": "Views\\ViewStatePaternElements\\GrupaPracowniczaState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T14:18:20.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PracownikIDGeneratorTests.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\PracownikIDGeneratorTests.cs",
+              "RelativeDocumentMoniker": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\PracownikIDGeneratorTests.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\PracownikIDGeneratorTests.cs",
+              "RelativeToolTip": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\PracownikIDGeneratorTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T20:34:04.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "GrupaPracowniczaTests.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaTests.cs",
               "RelativeDocumentMoniker": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaTests.cs",
               "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaTests.cs",
               "RelativeToolTip": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaTests.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAYwGsAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAiwJsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T12:30:05.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "GrupaPracowniczaStateTests.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaStateTests.cs",
               "RelativeDocumentMoniker": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaStateTests.cs",
               "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaStateTests.cs",
               "RelativeToolTip": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaStateTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T12:46:38.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
+              "Title": "GrupaPracowniczaIDGeneratorTests.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
+              "RelativeDocumentMoniker": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
+              "RelativeToolTip": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T12:45:12.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "FrmGrupyPracownicze.Designer.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.Designer.cs",
               "RelativeDocumentMoniker": "Views\\FrmGrupyPracownicze.Designer.cs",
@@ -242,20 +212,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GrupaPracowniczaIDGeneratorTests.cs",
-              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
-              "RelativeDocumentMoniker": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
-              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
-              "RelativeToolTip": "MVCWinFormsMasterDetailTests\\MVCWinFormsMasterDetailTests\\GrupaPracowniczaIDGeneratorTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "PracownikIDGenerator.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\PracownikIDGenerator.cs",
+              "RelativeDocumentMoniker": "Models\\PracownikIDGenerator.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\PracownikIDGenerator.cs",
+              "RelativeToolTip": "Models\\PracownikIDGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T12:45:12.205Z",
+              "WhenOpened": "2025-12-02T18:43:25.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GrupaPracowniczaIDGenerator.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\GrupaPracowniczaIDGenerator.cs",
+              "RelativeDocumentMoniker": "Models\\GrupaPracowniczaIDGenerator.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\GrupaPracowniczaIDGenerator.cs",
+              "RelativeToolTip": "Models\\GrupaPracowniczaIDGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T08:22:47.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FrmGrupyPracownicze.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs",
+              "RelativeDocumentMoniker": "Views\\FrmGrupyPracownicze.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs",
+              "RelativeToolTip": "Views\\FrmGrupyPracownicze.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAAAgwBMBAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:23:42.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FrmGrupyPracownicze.cs [Design]",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs",
+              "RelativeDocumentMoniker": "Views\\FrmGrupyPracownicze.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\FrmGrupyPracownicze.cs [Design]",
+              "RelativeToolTip": "Views\\FrmGrupyPracownicze.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:23:03.249Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "PrzegladanieGrupaPracowniczaState.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
+              "RelativeDocumentMoniker": "Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
+              "RelativeToolTip": "Views\\ViewStatePaternElements\\PrzegladanieGrupaPracowniczaState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T21:44:08.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Pracownik.cs",
+              "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\Pracownik.cs",
+              "RelativeDocumentMoniker": "Models\\Pracownik.cs",
+              "ToolTip": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Models\\Pracownik.cs",
+              "RelativeToolTip": "Models\\Pracownik.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T18:40:09.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "IGrupyPracowniczeViewMethodsToManipulateView.cs",
               "DocumentMoniker": "J:\\Users\\greg240\\Documents\\MVCWinFormsMasterDetail\\Views\\IGrupyPracowniczeViewMethodsToManipulateView.cs",
               "RelativeDocumentMoniker": "Views\\IGrupyPracowniczeViewMethodsToManipulateView.cs",

@@ -53,6 +53,7 @@
     <Compile Include="GrupaPracowniczaIDGeneratorTests.cs" />
     <Compile Include="GrupaPracowniczaStateTests.cs" />
     <Compile Include="GrupaPracowniczaTests.cs" />
+    <Compile Include="PracownikIDGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

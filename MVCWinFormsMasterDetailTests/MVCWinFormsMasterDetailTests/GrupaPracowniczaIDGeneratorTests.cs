@@ -12,8 +12,6 @@ namespace MVCWinFormsMasterDetailTests
     [TestClass]
     public class GrupaPracowniczaIDGeneratorTests
     {
-
-
         [TestMethod]
         public void TestGenerateForEmptyList()
         {
