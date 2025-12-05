@@ -227,12 +227,12 @@ namespace MVCWinFormsMasterDetail
         }
         public void CancelGrupaPracownicza()
         {
-            //if (_seletedGrupaPracownicza != null)
-            //{
+            if (_seletedGrupaPracownicza != null)
+            {
                 _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
                 UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
                 _view.State.CancelGrupaPracowniczaClick();
-            //}
+            }
         }
 
         public void SelectedPracownikChanged(string selectedPracownikId)
