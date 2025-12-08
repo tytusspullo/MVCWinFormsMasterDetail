@@ -280,7 +280,7 @@ namespace MVCWinFormsMasterDetail
                     {
                         var newForSelect = _editedGrupaPracownicza.Pracownicy.ElementAtOrDefault(deletedIndex)
                             ?? _editedGrupaPracownicza.Pracownicy.LastOrDefault();
-                        _view.SetSelectedInGrid(_editedGrupaPracownicza.Pracownicy[deletedIndex]); //invoke Selection change
+                        _view.SetSelectedInGrid(newForSelect); //invoke Selection change
                     }
                     else
                     {
