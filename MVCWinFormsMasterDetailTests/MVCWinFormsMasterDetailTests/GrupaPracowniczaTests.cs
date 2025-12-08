@@ -197,9 +197,11 @@ namespace MVCWinFormsMasterDetailTests
         public void PracownikTestKopii()
         {
             Pracownik pracownik = new Pracownik(2,"Kowalski","Tadeusz");
-            var kopia = pracownik.Clone();
-            bool same = ReferenceEquals(pracownik, kopia);
-            Assert.IsTrue(same);
+            Pracownik kopia = (Pracownik)pracownik.Clone();
+            
+            Assert.IsTrue(kopia.Nazwisko == pracownik.Nazwisko &&
+                            kopia.Imie == pracownik.Imie &&
+                            kopia.IdPracownika == pracownik.IdPracownika);
         }
     }
 }
