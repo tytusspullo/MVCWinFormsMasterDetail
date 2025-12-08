@@ -291,7 +291,7 @@ namespace MVCWinFormsMasterDetail
             }
 
         }
-        public void SaveEditPracownik() 
+        public void SavePracownik() 
         {
             UpdatePracownikWithViewValues(_editedPracownik);
             if (IsNewPracownik())

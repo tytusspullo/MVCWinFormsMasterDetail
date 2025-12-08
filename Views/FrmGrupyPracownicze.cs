@@ -356,7 +356,7 @@ namespace MVCWinFormsMasterDetail
         }
         private void btnSaveEditPracownik_Click(object sender, EventArgs e)
         {
-            _controller.SaveEditPracownik();
+            _controller.SavePracownik();
         }
         private void btnCancelEditPracownik_Click(object sender, EventArgs e)
         {
