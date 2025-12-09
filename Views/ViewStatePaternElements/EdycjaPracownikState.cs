@@ -16,12 +16,10 @@ namespace MVCWinFormsMasterDetail
         public override void SavePracownikClick()
         {
             _frm.State = new EdycjaGrupaPracowniczaState(_frm);
-            _frm.UpdateViewLookToItsState();
         }
         public override void CancelPracownikClick()
         {
             _frm.State = new EdycjaGrupaPracowniczaState(_frm);
-            _frm.UpdateViewLookToItsState();
         }
        
         public override string ToString()

@@ -29,13 +29,16 @@ namespace MVCWinFormsMasterDetail
         public GrupaPracowniczaState State
         {
             get { return _state; }
-            set { _state = value; }
+            set { 
+                _state = value;
+                UpdateViewLookToItsState();
+                }
         }
         public void UpdateStatusBarState()
         {
             this.Text = _state.ToString();
         }
-        public void UpdateViewLookToItsState()
+        private void UpdateViewLookToItsState()
         {
             switch (_state)
             {
