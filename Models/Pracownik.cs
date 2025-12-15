@@ -6,21 +6,29 @@ using System.Threading.Tasks;
 
 namespace MVCWinFormsMasterDetail
 {
-    public class Pracownik:ICloneable
+    public class Pracownik : ICloneable
     {
-        public Pracownik(int idPracownika, string nazwisko, string imie) 
+
+        public Pracownik()
+        {
+        }
+        public Pracownik(int idPracownika, string imie, string nazwisko,GrupaPracownicza grupa)
         {
             IdPracownika = idPracownika;
-            Nazwisko = nazwisko;
             Imie = imie;
+            Nazwisko = nazwisko;
+            GrupaPracownicza = grupa;
         }
-        public int IdPracownika { get; set; }
+        public int IdPracownika { get; set; } // Klucz główny
+        public string Imie { get; set; }
         public string Nazwisko { get; set; }
-        public string Imie {  get; set; }
+
+        // Klucz obcy
+        public GrupaPracownicza GrupaPracownicza { get; set; }
+
         public object Clone()
         {
-            Pracownik other = (Pracownik)MemberwiseClone();
-            return other;
+            return MemberwiseClone();
         }
     }
 }

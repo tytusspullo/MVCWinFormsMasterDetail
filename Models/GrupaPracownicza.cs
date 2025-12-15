@@ -6,37 +6,28 @@ using System.Threading.Tasks;
 
 namespace MVCWinFormsMasterDetail
 {
-    public class GrupaPracownicza: ICloneable
+    public class GrupaPracownicza : ICloneable
     {
-        private List<Pracownik> _pracownicy = null;
-
         public GrupaPracownicza()
-        {
-            _pracownicy = new List<Pracownik>();
-        }
-        public GrupaPracownicza(int idGrupyPracowniczej, string nazwa) :this()
+        { }
+        public GrupaPracownicza(int idGrupyPracowniczej, string nazwa)
         {
             IdGrupyPracowniczej = idGrupyPracowniczej;
             NazwaGrupyPracowniczej = nazwa;
         }
-
-        public int IdGrupyPracowniczej { get; set; }
+        public int IdGrupyPracowniczej { get; set; } // Klucz główny
         public string NazwaGrupyPracowniczej { get; set; }
-        public List<Pracownik> Pracownicy
-        {
-            get { return _pracownicy; }
-        }
-        /// <summary>
-        /// Creates deep copy.
-        /// </summary>
-        /// <returns></returns>
+
+        public List<Pracownik> Pracownicy { get; set; } = new List<Pracownik>();
+
         public object Clone()
         {
-            var other = new GrupaPracownicza(IdGrupyPracowniczej, NazwaGrupyPracowniczej);
-            foreach (var item in _pracownicy)
+            var other = new GrupaPracownicza
             {
-                other.Pracownicy.Add((Pracownik)item.Clone());
-            }
+                IdGrupyPracowniczej = this.IdGrupyPracowniczej,
+                NazwaGrupyPracowniczej = this.NazwaGrupyPracowniczej,
+                Pracownicy = this.Pracownicy.Select(p => (Pracownik)p.Clone()).ToList()
+            };
             return other;
         }
     }

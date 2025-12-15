@@ -46,21 +46,21 @@ namespace MVCWinFormsMasterDetail
             var grupa = new GrupaPracownicza();
             grupa.IdGrupyPracowniczej = 1;
             grupa.NazwaGrupyPracowniczej = "Apteka";
-            grupa.Pracownicy.Add(new Pracownik(11, "Nowak", "Jan"));
-            grupa.Pracownicy.Add(new Pracownik(12, "Kowalski", "Piotr"));
+            grupa.Pracownicy.Add(new Pracownik(11, "Nowak", "Jan" ,grupa));
+            grupa.Pracownicy.Add(new Pracownik(12, "Kowalski", "Piotr" ,grupa));
             grupyPracownicze.Add(grupa);
 
             var grupa2 = new GrupaPracownicza();
             grupa2.IdGrupyPracowniczej = 2;
             grupa2.NazwaGrupyPracowniczej = "Odzial Chemioterapi";
-            grupa2.Pracownicy.Add(new Pracownik(13, "Orzel", "Ryszard"));
-            grupa2.Pracownicy.Add(new Pracownik(14, "Nowakowski", "Karol"));
+            grupa2.Pracownicy.Add(new Pracownik(13, "Orzel", "Ryszard" ,grupa));
+            grupa2.Pracownicy.Add(new Pracownik(14, "Nowakowski", "Karol" , grupa));
             grupyPracownicze.Add(grupa2);
 
             var grupa3 = new GrupaPracownicza();
             grupa3.IdGrupyPracowniczej = 3;
             grupa3.NazwaGrupyPracowniczej = "Odzial Ratunkowy";
-            grupa3.Pracownicy.Add(new Pracownik(15, "Kowalski", "Jan"));
+            grupa3.Pracownicy.Add(new Pracownik(15, "Kowalski", "Jan" , grupa));
             grupyPracownicze.Add(grupa3);
         }
 

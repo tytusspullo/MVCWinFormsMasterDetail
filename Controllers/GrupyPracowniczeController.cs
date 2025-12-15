@@ -252,7 +252,7 @@ namespace MVCWinFormsMasterDetail
         }
         public void AddPracownik()
         {
-            _editedPracownik = new Pracownik(0, "", "");
+            _editedPracownik = new Pracownik(0, "", "" , _editedGrupaPracownicza);
             this.UpdateViewWithPracownikValues(_editedPracownik);
             _view.State.AddPracownikClick();
         }
@@ -325,7 +325,7 @@ namespace MVCWinFormsMasterDetail
             }
             else
             {
-                _editedPracownik = new Pracownik(0, "", "");
+                _editedPracownik = new Pracownik(0, "", "" , _editedGrupaPracownicza);
             }
             UpdateViewWithPracownikValues(_editedPracownik);
             _view.State.CancelPracownikClick();
