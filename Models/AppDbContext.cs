@@ -21,7 +21,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<GrupaPracownicza>()
             .HasMany(g => g.Pracownicy)       
             .WithRequired(p => p.GrupaPracownicza) 
-            //.HasForeignKey(p => p.GrupaPracowniczaId)
+            .HasForeignKey(p => p.GrupaPracowniczaId)
             .WillCascadeOnDelete(false); 
 
         base.OnModelCreating(modelBuilder);

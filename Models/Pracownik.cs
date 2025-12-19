@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.Entity;
 namespace MVCWinFormsMasterDetail
 {
     public class Pracownik : ICloneable
@@ -23,7 +24,11 @@ namespace MVCWinFormsMasterDetail
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
 
-        // Klucz obcy
+        public int GrupaPracowniczaId
+        { 
+            get; set; 
+        }
+        [ForeignKey("GrupaPracownicza")]
         public GrupaPracownicza GrupaPracownicza { get; set; }
 
         public object Clone()

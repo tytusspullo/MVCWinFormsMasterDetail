@@ -15,7 +15,7 @@ namespace MVCWinFormsMasterDetail
             IdGrupyPracowniczej = idGrupyPracowniczej;
             NazwaGrupyPracowniczej = nazwa;
         }
-        public int IdGrupyPracowniczej { get; set; } // Klucz główny
+        public int IdGrupyPracowniczej { get; set; } 
         public string NazwaGrupyPracowniczej { get; set; }
 
         public List<Pracownik> Pracownicy { get; set; } = new List<Pracownik>();

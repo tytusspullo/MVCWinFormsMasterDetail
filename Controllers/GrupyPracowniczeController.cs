@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,31 +11,33 @@ namespace MVCWinFormsMasterDetail
 {
     public class GrupyPracowniczeController
     {
-        List<GrupaPracownicza> _grupyPracownicze = new List<GrupaPracownicza>();    //model
+        IGrupyPracowniczeRepository _repository = null;
+        List<GrupaPracownicza> _cachedGrupy = null;                                 //model
         IGrupyPracowniczeViewMethodsToManipulateView _view = null;                  //view reference
         GrupaPracownicza _seletedGrupaPracownicza = null;                           //for searching purpouses, pointer on orginal list / model
         GrupaPracownicza _editedGrupaPracownicza = null;                            //for editing operation and SAVE or REJECT changes, deep copy of selected item
         Pracownik _selectedPracownik = null;                                        //for searching purpouses
         Pracownik _editedPracownik = null;                                          //for editing operation and SAVE or REJECT changes, deep copy of selected item
 
-        public GrupyPracowniczeController(IGrupyPracowniczeViewMethodsToManipulateView view, List<GrupaPracownicza> grupyPracownicze)
+        public GrupyPracowniczeController(IGrupyPracowniczeViewMethodsToManipulateView view, IGrupyPracowniczeRepository repository)
         {
             _view = view;
-            _grupyPracownicze = grupyPracownicze;
+            _repository = repository;
             _view.SetController(this);
         }
 
         //for start load of lists
-        public void LoadView()
+        public async void LoadViewAsync()
         {
             _view.ClearGridGrupyPracownicze();
-            if (_grupyPracownicze.Count > 0)
+            _cachedGrupy = await _repository.GetAllWithPracownicyAsync();
+            if (_cachedGrupy.Count > 0)
             {
-                foreach (var grupaPracownicza in _grupyPracownicze)
+                foreach (var grupaPracownicza in _cachedGrupy)
                 {
                     _view.AddToGrid(grupaPracownicza);
                 }
-                _seletedGrupaPracownicza = _grupyPracownicze[0];
+                _seletedGrupaPracownicza = _cachedGrupy[0];
                 _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
                 _view.SetSelectedInGrid(_seletedGrupaPracownicza);
                 UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
@@ -121,7 +124,7 @@ namespace MVCWinFormsMasterDetail
         }
         public void EditGrupaPracownicza()
         {
-            if (_grupyPracownicze.Count > 0)
+            if (_cachedGrupy.Count > 0)
             {
                 UpdateViewWithGrupaPracowniczaValues(_editedGrupaPracownicza);
                 _view.ClearGridPracownicy();
@@ -142,18 +145,18 @@ namespace MVCWinFormsMasterDetail
 
             if (id != 0)
             {
-                var grupaPracowniczaToRemove = _grupyPracownicze.SingleOrDefault(g => g.IdGrupyPracowniczej == id);
+                var grupaPracowniczaToRemove = _cachedGrupy.SingleOrDefault(g => g.IdGrupyPracowniczej == id);
                 
                 if (grupaPracowniczaToRemove != null)
                 {
-                    int deletedIndex = this._grupyPracownicze.IndexOf(grupaPracowniczaToRemove);
-                    this._grupyPracownicze.Remove(grupaPracowniczaToRemove);
+                    int deletedIndex = this._cachedGrupy.IndexOf(grupaPracowniczaToRemove);
+                    this._cachedGrupy.Remove(grupaPracowniczaToRemove);
                     this._view.RemoveFromGrid(grupaPracowniczaToRemove);
 
-                    if (_grupyPracownicze.Count > 0)
+                    if (_cachedGrupy.Count > 0)
                     {
-                        var newdForSelect = _grupyPracownicze.ElementAtOrDefault(deletedIndex)  //cover normal case
-                                                ?? _grupyPracownicze.LastOrDefault();           //cover case when removed last and get by index
+                        var newdForSelect = _cachedGrupy.ElementAtOrDefault(deletedIndex)  //cover normal case
+                                                ?? _cachedGrupy.LastOrDefault();           //cover case when removed last and get by index
                         _view.SetSelectedInGrid(newdForSelect);
                         //change edited, change record in display?
                     }
@@ -170,7 +173,7 @@ namespace MVCWinFormsMasterDetail
 
             if (!string.IsNullOrEmpty(selectedGrupaPracowniczaId))
             {
-                _seletedGrupaPracownicza = _grupyPracownicze.SingleOrDefault(p => p.IdGrupyPracowniczej == Convert.ToInt32(selectedGrupaPracowniczaId));
+                _seletedGrupaPracownicza = _cachedGrupy.SingleOrDefault(p => p.IdGrupyPracowniczej == Convert.ToInt32(selectedGrupaPracowniczaId));
                 _editedGrupaPracownicza = (GrupaPracownicza)_seletedGrupaPracownicza.Clone();
             }
 
@@ -200,19 +203,19 @@ namespace MVCWinFormsMasterDetail
 
             if (IsNewGrupaPracownicza())
             {
-                var generator = new GrupaPracowniczaIDGenerator();
-                _editedGrupaPracownicza.IdGrupyPracowniczej = generator.GenerateID(_grupyPracownicze);
-                this._grupyPracownicze.Add(_editedGrupaPracownicza);
+                //_cachedGrupy.Add(_editedGrupaPracownicza);
+                _repository.AddGrupaAsync(_editedGrupaPracownicza);
                 this._view.AddToGrid(_editedGrupaPracownicza);
             }
             else
             {
-                if (_grupyPracownicze.Contains(_seletedGrupaPracownicza))
+                if (_cachedGrupy.Contains(_seletedGrupaPracownicza))
                 {
-                    int idx = _grupyPracownicze.IndexOf(_grupyPracownicze.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
+                    int idx = _cachedGrupy.IndexOf(_cachedGrupy.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
                     if (idx != -1)
                     {
-                        _grupyPracownicze[idx] = _editedGrupaPracownicza;
+                        //_cachedGrupy[idx] = _editedGrupaPracownicza;
+                        _repository.UpdateGrupaAsync(_editedGrupaPracownicza);
                         this._view.UpdateGrid(_editedGrupaPracownicza);
                     }
                 }
@@ -222,7 +225,7 @@ namespace MVCWinFormsMasterDetail
         }
         private bool IsNewGrupaPracownicza()
         {
-            return _grupyPracownicze.SingleOrDefault(p => p.IdGrupyPracowniczej == _editedGrupaPracownicza.IdGrupyPracowniczej) == null;
+            return _cachedGrupy.SingleOrDefault(p => p.IdGrupyPracowniczej == _editedGrupaPracownicza.IdGrupyPracowniczej) == null;
                
         }
         public void CancelGrupaPracownicza()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCWinFormsMasterDetail.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,14 +21,16 @@ namespace MVCWinFormsMasterDetail
             InitializeComponent();
         }
 
-        private void Load()
+        private async void Load()
         {
-            grupyPracownicze = new List<GrupaPracownicza>();
-            //LoadSampleData();
             var view = new FrmGrupyPracownicze();
-            var controller = new GrupyPracowniczeController(view, grupyPracownicze);
-            controller.LoadView();
-            view.Show();
+            using (var context = new AppDbContext())
+            {
+                var repository = new GrupyPracowniczeRepository(context);
+                var controller = new GrupyPracowniczeController(view, repository);
+                controller.LoadViewAsync(); // przerób LoadView na async
+                view.Show();
+            }
         }
 
         private void grupyPracowniczeToolStripMenuItem_Click(object sender, EventArgs e)
