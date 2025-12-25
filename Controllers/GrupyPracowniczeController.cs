@@ -27,7 +27,7 @@ namespace MVCWinFormsMasterDetail
         }
 
         //for start load of lists
-        public async void LoadViewAsync()
+        public async Task LoadViewAsync()
         {
             _view.ClearGridGrupyPracownicze();
             _cachedGrupy = await _repository.GetAllWithPracownicyAsync();

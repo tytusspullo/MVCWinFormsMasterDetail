@@ -11,33 +11,54 @@ namespace MVCWinFormsMasterDetail.Models
     internal class GrupyPracowniczeRepository: IGrupyPracowniczeRepository,IDisposable
     {
         private readonly AppDbContext _context;
-        public GrupyPracowniczeRepository(AppDbContext context) => _context = context;
+        public GrupyPracowniczeRepository()
+        { 
+            
+        }
 
         public async Task<List<GrupaPracownicza>> GetAllWithPracownicyAsync()
         {
-            return await _context.GrupyPracownicze.Include("Pracownicy").ToListAsync();
+            using (var context = new AppDbContext())
+            {
+                return await context.GrupyPracownicze
+                    .Include("Pracownicy")
+                    .ToListAsync();
+            }
         }
         public async Task AddGrupaAsync(GrupaPracownicza grupa)
         {
-            _context.GrupyPracownicze.Add(grupa);
-            await _context.SaveChangesAsync();
+            using (var context = new AppDbContext())
+            {
+                context.GrupyPracownicze.Add(grupa);
+                await context.SaveChangesAsync();
+            }
         }
-        public async Task UpdateGrupaAsync(GrupaPracownicza g)
+        public async Task UpdateGrupaAsync(GrupaPracownicza grupa)
         {
-            _context.GrupyPracownicze.AddOrUpdate(g);
-
             //change state saving
-            await _context.SaveChangesAsync();
+            using (var context = new AppDbContext())
+            {
+                context.Entry(grupa).State = EntityState.Modified;
+                await context.SaveChangesAsync();
+            }
             //saved
         }
-        public Task DeleteGrupaAsync(int id)
+        public async Task DeleteGrupaAsync(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new AppDbContext())
+            {
+                var grupa = await context.GrupyPracownicze.FindAsync(id);
+                if (grupa != null)
+                {
+                    context.GrupyPracownicze.Remove(grupa);
+                    await context.SaveChangesAsync();
+                }
+            }
         }
         // podobne dla update (Attach + Entry.State = Modified lub bezpośrednie zmiany na tracked), delete, pracownicy
         public void Dispose()
         { 
-            _context.Dispose(); 
+            //_context.Dispose(); 
         }
 
         

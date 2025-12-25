@@ -24,13 +24,10 @@ namespace MVCWinFormsMasterDetail
         private async void Load()
         {
             var view = new FrmGrupyPracownicze();
-            using (var context = new AppDbContext())
-            {
-                var repository = new GrupyPracowniczeRepository(context);
-                var controller = new GrupyPracowniczeController(view, repository);
-                controller.LoadViewAsync(); // przerób LoadView na async
-                view.Show();
-            }
+            var repository = new GrupyPracowniczeRepository();  // bez context
+            var controller = new GrupyPracowniczeController(view, repository);
+            await controller.LoadViewAsync();
+            view.Show();
         }
 
         private void grupyPracowniczeToolStripMenuItem_Click(object sender, EventArgs e)
