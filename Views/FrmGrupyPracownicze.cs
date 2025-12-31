@@ -334,7 +334,7 @@ namespace MVCWinFormsMasterDetail
         }
         private void btnSaveGrupaPracownicza_Click(object sender, EventArgs e)
         {
-            _controller.SaveGrupaPracownicza();
+            _controller.SaveGrupaPracowniczaAsync();
         }
         private void btnCancelGrupaPracownicza_Click(object sender, EventArgs e)
         {

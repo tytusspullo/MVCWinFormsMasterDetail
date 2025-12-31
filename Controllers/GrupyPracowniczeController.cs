@@ -197,14 +197,14 @@ namespace MVCWinFormsMasterDetail
                 }
             }
         }
-        public void SaveGrupaPracownicza()
+        public async Task SaveGrupaPracowniczaAsync()
         {
             UpdateGrupaPracowniczaWithViewValues(_editedGrupaPracownicza);
 
             if (IsNewGrupaPracownicza())
             {
-                //_cachedGrupy.Add(_editedGrupaPracownicza);
-                _repository.AddGrupaAsync(_editedGrupaPracownicza);
+                await _repository.AddGrupaAsync(_editedGrupaPracownicza);
+                _cachedGrupy.Add(_editedGrupaPracownicza);
                 this._view.AddToGrid(_editedGrupaPracownicza);
             }
             else
@@ -214,19 +214,21 @@ namespace MVCWinFormsMasterDetail
                     int idx = _cachedGrupy.IndexOf(_cachedGrupy.FirstOrDefault(p => p.IdGrupyPracowniczej == _seletedGrupaPracownicza.IdGrupyPracowniczej));
                     if (idx != -1)
                     {
-                        //_cachedGrupy[idx] = _editedGrupaPracownicza;
-                        _repository.UpdateGrupaAsync(_editedGrupaPracownicza);
+                        
+                        await _repository.UpdateGrupaAsync(_editedGrupaPracownicza);
+                        //_cachedGrupy ma juz referencje
                         this._view.UpdateGrid(_editedGrupaPracownicza);
                     }
                 }
             }
+            _seletedGrupaPracownicza = _editedGrupaPracownicza;
             _view.SetSelectedInGrid(_editedGrupaPracownicza);
             _view.State.SaveGrupaPracowniczaClick();
         }
         private bool IsNewGrupaPracownicza()
         {
-            return _cachedGrupy.SingleOrDefault(p => p.IdGrupyPracowniczej == _editedGrupaPracownicza.IdGrupyPracowniczej) == null;
-               
+            return _editedGrupaPracownicza.IdGrupyPracowniczej == 0;
+
         }
         public void CancelGrupaPracownicza()
         {
