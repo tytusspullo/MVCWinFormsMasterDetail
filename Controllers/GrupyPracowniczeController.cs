@@ -151,6 +151,7 @@ namespace MVCWinFormsMasterDetail
                 {
                     int deletedIndex = this._cachedGrupy.IndexOf(grupaPracowniczaToRemove);
                     this._cachedGrupy.Remove(grupaPracowniczaToRemove);
+                    _repository.DeleteGrupaAsync(grupaPracowniczaToRemove.IdGrupyPracowniczej);
                     this._view.RemoveFromGrid(grupaPracowniczaToRemove);
 
                     if (_cachedGrupy.Count > 0)
@@ -302,7 +303,7 @@ namespace MVCWinFormsMasterDetail
             if (IsNewPracownik())
             {
                 var generator = new PracownikIDGenerator();
-                _editedPracownik.IdPracownika = generator.GenerateID(_editedGrupaPracownicza.Pracownicy);
+                //_editedPracownik.IdPracownika = generator.GenerateID(_editedGrupaPracownicza.Pracownicy);
                 this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
                 this._view.AddToGrid(_editedPracownik);
             }

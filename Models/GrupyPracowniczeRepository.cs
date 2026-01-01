@@ -55,6 +55,15 @@ namespace MVCWinFormsMasterDetail.Models
                 }
             }
         }
+        //public async Task AddPracownikAsync(GrupaPracownicza grupa,Pracownik pracownik)
+        //{
+        //    using (var context = new AppDbContext())
+        //    {
+        //        context.Entry(grupa).State = EntityState.Modified;
+                
+        //        await context.SaveChangesAsync();
+        //    }
+        //}
         // podobne dla update (Attach + Entry.State = Modified lub bezpośrednie zmiany na tracked), delete, pracownicy
         public void Dispose()
         { 
