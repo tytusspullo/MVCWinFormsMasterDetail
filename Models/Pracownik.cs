@@ -23,6 +23,7 @@ namespace MVCWinFormsMasterDetail
         public int IdPracownika { get; set; } // Klucz główny
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
+        public int TempId { get; set; } //na potrzeby edycji do czasu zapisu kaskadowego Grupy Pracowniczej wraz z Pracownikami
 
         public int GrupaPracowniczaId
         { 

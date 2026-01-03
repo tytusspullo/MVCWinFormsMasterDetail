@@ -31,17 +31,39 @@ namespace MVCWinFormsMasterDetail.Models
             {
                 context.GrupyPracownicze.Add(grupa);
                 await context.SaveChangesAsync();
+                grupa.IdGrupyPracowniczej = grupa.IdGrupyPracowniczej;  // Już ustawione
+                foreach (var p in grupa.Pracownicy.Where(p => p.IdPracownika == 0)) p.IdPracownika = p.IdPracownika;
             }
         }
-        public async Task UpdateGrupaAsync(GrupaPracownicza grupa)
+        public async Task UpdateGrupaAsync(GrupaPracownicza grupaFromUI)
         {
             //change state saving
             using (var context = new AppDbContext())
             {
-                context.Entry(grupa).State = EntityState.Modified;
+                var grupaFromDb = await context.GrupyPracownicze
+                 .Include(g => g.Pracownicy)
+                 .FirstAsync(g => g.IdGrupyPracowniczej == grupaFromUI.IdGrupyPracowniczej);
+
+                grupaFromDb.NazwaGrupyPracowniczej = grupaFromUI.NazwaGrupyPracowniczej;
+
+                var uiIds = grupaFromUI.Pracownicy.Select(p => p.IdPracownika).ToList();
+                var toRemove = grupaFromDb.Pracownicy.Where(p => p.IdPracownika != 0 && !uiIds.Contains(p.IdPracownika));
+                context.Pracownicy.RemoveRange(toRemove);
+
+                foreach (var p in grupaFromUI.Pracownicy)
+                {
+                    if (p.IdPracownika == 0)
+                        grupaFromDb.Pracownicy.Add(p);
+                    else
+                    {
+                        var existing = grupaFromDb.Pracownicy.First(x => x.IdPracownika == p.IdPracownika);
+                        existing.Imie = p.Imie;
+                        existing.Nazwisko = p.Nazwisko;
+                    }
+                }
                 await context.SaveChangesAsync();
+                //saved
             }
-            //saved
         }
         public async Task DeleteGrupaAsync(int id)
         {

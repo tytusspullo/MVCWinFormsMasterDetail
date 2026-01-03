@@ -18,11 +18,13 @@ namespace MVCWinFormsMasterDetail
         GrupaPracownicza _editedGrupaPracownicza = null;                            //for editing operation and SAVE or REJECT changes, deep copy of selected item
         Pracownik _selectedPracownik = null;                                        //for searching purpouses
         Pracownik _editedPracownik = null;                                          //for editing operation and SAVE or REJECT changes, deep copy of selected item
+        PracownikTempIDGenerator _pracownikTempIDGenerator = null;                  //generate Temp ID until replaced by cascade save Grupa Pracownicza with Pracownik
 
         public GrupyPracowniczeController(IGrupyPracowniczeViewMethodsToManipulateView view, IGrupyPracowniczeRepository repository)
         {
             _view = view;
             _repository = repository;
+            _pracownikTempIDGenerator = new PracownikTempIDGenerator();
             _view.SetController(this);
         }
 
@@ -247,7 +249,16 @@ namespace MVCWinFormsMasterDetail
 
         public void SelectedPracownikChanged(string selectedPracownikId)
         {
-            var pracownik = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == Convert.ToInt32(selectedPracownikId));
+            Pracownik pracownik = null;
+            if (Convert.ToInt32(selectedPracownikId) > 0)
+            {
+                pracownik = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == Convert.ToInt32(selectedPracownikId));
+            }
+            else
+            {
+                pracownik = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.TempId == Convert.ToInt32(selectedPracownikId));
+            }
+
             if (pracownik != null)
             {
                 _selectedPracownik = pracownik;
@@ -259,6 +270,7 @@ namespace MVCWinFormsMasterDetail
         public void AddPracownik()
         {
             _editedPracownik = new Pracownik(0, "", "" , _editedGrupaPracownicza);
+            _editedPracownik.TempId = _pracownikTempIDGenerator.GenerateTempID();
             this.UpdateViewWithPracownikValues(_editedPracownik);
             _view.State.AddPracownikClick();
         }
@@ -276,6 +288,8 @@ namespace MVCWinFormsMasterDetail
             if (id != 0)
             {
                 var pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == id);
+                
+
                 if (pracownikToRemove != null)
                 {
                     int deletedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
@@ -321,7 +335,9 @@ namespace MVCWinFormsMasterDetail
         }
         private bool IsNewPracownik()
         {
-            return _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == _editedPracownik.IdPracownika) == null;
+            int idPracownika = _editedPracownik?.IdPracownika ?? 0;
+
+            return idPracownika == 0 ? true : false; 
         }
         public void CancelEditPracownik()
         {

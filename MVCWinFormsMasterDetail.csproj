@@ -64,6 +64,7 @@
     <Compile Include="Models\GrupyPracowniczeRepository.cs" />
     <Compile Include="Models\IGrupyPracowniczeRepository.cs" />
     <Compile Include="Models\PracownikIDGenerator.cs" />
+    <Compile Include="Models\PracownikTempIDGenerator.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
