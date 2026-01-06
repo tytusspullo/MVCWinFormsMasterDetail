@@ -6,7 +6,7 @@ public class AppDbContext : DbContext
     public DbSet<GrupaPracownicza> GrupyPracownicze { get; set; }
     public DbSet<Pracownik> Pracownicy { get; set; }
 
-    public AppDbContext() : base("Data Source=GPPC\\SQL2022_2;Initial Catalog=TwojaNazwaBazyDanych;User ID=sa;Password=moje;TrustServerCertificate=False;")
+    public AppDbContext() : base("Data Source=GPPC\\SQL2022_2;Initial Catalog=TwojaNazwaBazyDanych;User ID=sa;Password=Zedalis22;TrustServerCertificate=False;")
     {
     }
 

@@ -270,7 +270,6 @@ namespace MVCWinFormsMasterDetail
         public void AddPracownik()
         {
             _editedPracownik = new Pracownik(0, "", "" , _editedGrupaPracownicza);
-            _editedPracownik.TempId = _pracownikTempIDGenerator.GenerateTempID();
             this.UpdateViewWithPracownikValues(_editedPracownik);
             _view.State.AddPracownikClick();
         }
@@ -284,29 +283,36 @@ namespace MVCWinFormsMasterDetail
         }
         public void RemovePracownik()
         {
+            Pracownik pracownikToRemove = null;
             int id = _selectedPracownik?.IdPracownika ?? 0;
-            if (id != 0)
+
+            if (id == 0) //new Pracownik
             {
-                var pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == id);
-                
+                int tempId = _selectedPracownik?.TempId ?? 0;
+                pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.TempId == tempId);
+            }
 
-                if (pracownikToRemove != null)
+            if (id != 0) //existing Pracownik   
+            {
+                pracownikToRemove = _editedGrupaPracownicza.Pracownicy.SingleOrDefault(p => p.IdPracownika == id);
+            }
+
+            if (pracownikToRemove != null)
+            {
+                int deletedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
+                _editedGrupaPracownicza.Pracownicy.Remove(pracownikToRemove);
+                _view.RemoveFromGrid(pracownikToRemove);
+
+                if (_editedGrupaPracownicza.Pracownicy.Count > 0)
                 {
-                    int deletedIndex = this._editedGrupaPracownicza.Pracownicy.IndexOf(pracownikToRemove);
-                    _editedGrupaPracownicza.Pracownicy.Remove(pracownikToRemove);
-                    _view.RemoveFromGrid(pracownikToRemove);
-
-                    if (_editedGrupaPracownicza.Pracownicy.Count > 0)
-                    {
-                        var newForSelect = _editedGrupaPracownicza.Pracownicy.ElementAtOrDefault(deletedIndex)
-                            ?? _editedGrupaPracownicza.Pracownicy.LastOrDefault();
-                        _view.SetSelectedInGrid(newForSelect); //invoke Selection change
-                    }
-                    else
-                    {
-                        _selectedPracownik = null;
-                        _editedPracownik = null;
-                    }
+                    var newForSelect = _editedGrupaPracownicza.Pracownicy.ElementAtOrDefault(deletedIndex)
+                        ?? _editedGrupaPracownicza.Pracownicy.LastOrDefault();
+                    _view.SetSelectedInGrid(newForSelect); //invoke Selection change
+                }
+                else
+                {
+                    _selectedPracownik = null;
+                    _editedPracownik = null;
                 }
             }
 
@@ -316,8 +322,9 @@ namespace MVCWinFormsMasterDetail
             UpdatePracownikWithViewValues(_editedPracownik);
             if (IsNewPracownik())
             {
-                var generator = new PracownikIDGenerator();
+                //var generator = new PracownikIDGenerator();
                 //_editedPracownik.IdPracownika = generator.GenerateID(_editedGrupaPracownicza.Pracownicy);
+                _editedPracownik.TempId = _pracownikTempIDGenerator.GenerateTempID();
                 this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
                 this._view.AddToGrid(_editedPracownik);
             }
@@ -337,7 +344,8 @@ namespace MVCWinFormsMasterDetail
         {
             int idPracownika = _editedPracownik?.IdPracownika ?? 0;
 
-            return idPracownika == 0 ? true : false; 
+            bool isNew = idPracownika > 0 ? false : true;
+            return isNew;
         }
         public void CancelEditPracownik()
         {

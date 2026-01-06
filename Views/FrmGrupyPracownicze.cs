@@ -234,7 +234,14 @@ namespace MVCWinFormsMasterDetail
         public void AddToGrid(Pracownik pracownik)
         {
             ListViewItem parent;
-            parent = this.lvPracownicy.Items.Add(pracownik.IdPracownika.ToString());
+            if (pracownik.IdPracownika > 0)
+            {
+                parent = this.lvPracownicy.Items.Add(pracownik.IdPracownika.ToString());
+            }
+            else
+            {
+                parent = this.lvPracownicy.Items.Add(pracownik.TempId.ToString());
+            }
             parent.SubItems.Add(pracownik.Nazwisko + " " + pracownik.Imie);
         }
         public void UpdateGrid(Pracownik pracownik)
@@ -243,15 +250,25 @@ namespace MVCWinFormsMasterDetail
 
             foreach (ListViewItem row in this.lvPracownicy.Items)
             {
-                if (row.Text == pracownik.IdPracownika.ToString())
+                if (pracownik.IdPracownika > 0)
                 {
-                    rowToUpdate = row;
+                    if (row.Text == pracownik.IdPracownika.ToString())
+                    {
+                        rowToUpdate = row;
+                    }
+                }
+                else
+                {
+                    if (row.Text == pracownik.TempId.ToString())
+                    {
+                        rowToUpdate = row;
+                    }
                 }
             }
 
             if (rowToUpdate != null)
             {
-                rowToUpdate.Text = pracownik.IdPracownika.ToString();
+                rowToUpdate.Text = (pracownik.IdPracownika > 0) ? pracownik.IdPracownika.ToString() : pracownik.TempId.ToString();
                 rowToUpdate.SubItems[1].Text = pracownik.Nazwisko + " " + pracownik.Imie;
             }
         }
@@ -261,9 +278,19 @@ namespace MVCWinFormsMasterDetail
 
             foreach (ListViewItem row in this.lvPracownicy.Items)
             {
-                if (row.Text == pracownik.IdPracownika.ToString())
+                if (pracownik.IdPracownika > 0)
                 {
-                    rowToRemove = row;
+                    if (row.Text == pracownik.IdPracownika.ToString())
+                    {
+                        rowToRemove = row;
+                    }
+                }
+                else
+                {
+                    if (row.Text == pracownik.TempId.ToString())
+                    {
+                        rowToRemove = row;
+                    }
                 }
             }
 
@@ -283,6 +310,10 @@ namespace MVCWinFormsMasterDetail
         public void SetSelectedInGrid(Pracownik pracownik)
         {
             int id = pracownik?.IdPracownika ?? 0;
+            if (id <= 0)
+            {
+                id = pracownik?.TempId ?? 0;
+            }
 
             if (lvPracownicy.SelectedItems.Count == 1 &&
                 lvPracownicy.SelectedItems[0].Text == id.ToString())
