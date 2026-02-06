@@ -319,14 +319,26 @@ namespace MVCWinFormsMasterDetail
         }
         public void SavePracownik() 
         {
+            int generatedTempId = 0;
             UpdatePracownikWithViewValues(_editedPracownik);
             if (IsNewPracownik())
             {
-                //var generator = new PracownikIDGenerator();
-                //_editedPracownik.IdPracownika = generator.GenerateID(_editedGrupaPracownicza.Pracownicy);
-                _editedPracownik.TempId = _pracownikTempIDGenerator.GenerateTempID();
-                this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
-                this._view.AddToGrid(_editedPracownik);
+                if (_editedPracownik.TempId == 0)
+                {
+                    generatedTempId = _pracownikTempIDGenerator.GenerateTempID(_editedGrupaPracownicza.Pracownicy);
+                    _editedPracownik.TempId = generatedTempId;
+                    this._editedGrupaPracownicza.Pracownicy.Add(_editedPracownik);
+                    this._view.AddToGrid(_editedPracownik);
+                }
+                else
+                {
+                    int idx = _editedGrupaPracownicza.Pracownicy.IndexOf(_selectedPracownik);
+                    if (idx != -1)
+                    {
+                        _editedGrupaPracownicza.Pracownicy[idx] = _editedPracownik;
+                        this._view.UpdateGrid(_editedPracownik);
+                    }
+                }
             }
             else
             {
@@ -343,8 +355,10 @@ namespace MVCWinFormsMasterDetail
         private bool IsNewPracownik()
         {
             int idPracownika = _editedPracownik?.IdPracownika ?? 0;
+            int tempId = _editedPracownik?.TempId ?? 0;
 
-            bool isNew = idPracownika > 0 ? false : true;
+            bool isNew = (idPracownika == 0 && tempId == 0) ||
+                            (idPracownika == 0 && tempId < 0) ? true : false;
             return isNew;
         }
         public void CancelEditPracownik()

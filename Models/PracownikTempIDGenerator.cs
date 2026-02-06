@@ -8,11 +8,19 @@ namespace MVCWinFormsMasterDetail.Models
 {
     public class PracownikTempIDGenerator
     {
-        private int currentTempId = -1;
 
-        public int GenerateTempID()
+        public int GenerateTempID(List<Pracownik> list)
         {
-            return currentTempId--;
+            if (list.Count > 0)
+            {
+                int min = list.Min(p => p.TempId);
+                return --min;
+            }
+            else
+            {
+                return -1;
+            }
+            
         }
     }
 }
